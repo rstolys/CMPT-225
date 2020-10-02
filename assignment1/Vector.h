@@ -10,6 +10,36 @@ template <typename Object>
 class Vector
 {
   public:
+    
+    ///////////////////////////////////////////////////////////////////
+    /// visitAll -- will visit all the elements of the vector
+    ///
+    /// @param  none            vector containing elements to be visited
+    ///
+    ///////////////////////////////////////////////////////////////////
+    void visitAll()
+        {
+        Object      first;
+        Object      second;
+
+        for(int i = 0; i < theSize; i++)
+            {
+            if(i == 0)
+                {
+                first = myVector[i]; 
+                }
+            else 
+                {
+                second = myVector[i];           //These steps will move all the elements in the Vector over 1 position
+                myVector[i] = first;            // This is done so that the compiler does not optimize and skip this code
+                first = second;
+                }
+            }
+
+        return;
+        }
+
+
     explicit Vector( int initSize = 0 )
       : theSize{ initSize }, theCapacity{ initSize + SPARE_CAPACITY }
       { objects = new Object[ theCapacity ]; }
@@ -144,5 +174,6 @@ class Vector
     int theCapacity;
     Object * objects;
 };
+
 
 #endif

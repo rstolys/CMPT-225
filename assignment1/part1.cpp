@@ -9,8 +9,8 @@
 /***INCLUDES******************************************************************/
 #include <iostream>
 #include <string.h>
-#include "textbookCode/Vector.h"
-#include "textbookCode/List.h"
+#include "Vector.h"
+#include "List.h"
 #include <time.h>
 
 
@@ -32,13 +32,9 @@ using namespace std;
 int printResults(string partNum, string elementType, int numElements, string timeUnits, float vectorInsertTime, 
                  float listInsertionTime, float vectorVisitTime, float listVisitTime);
 
-float insertElementsToVector(int numElements, int arrayOfElements[], Vector<int> myVector);
+void insertElementsToVector(int numElements, int arrayOfElements[], Vector<int> myVector);
 
-float insertElementsToList(int numElements, int arrayOfElements[], List<int> myVector);
-
-float visitAll_vector(Vector<int> myVector);
-
-float visitAll_list(List<int> myList);
+void insertElementsToList(int numElements, int arrayOfElements[], List<int> myVector);
 
 float computeTime(clock_t start, clock_t end);
 
@@ -57,10 +53,13 @@ float computeTime(clock_t start, clock_t end);
 ///////////////////////////////////////////////////////////////////
 int main(int argc, char **argv)
     {
-    int             rc;                 // Return Command
+    int             rc;                     // Return Command
 
-    Vector<int>     myVector;           // Vector list to perform operations on
-    List<int>       myList;             // Linked list to perform operations on
+    Vector<int>     myVector;               // Vector list to perform operations on
+    List<int>       myList;                 // Linked list to perform operations on
+
+    clock_t         start;                  // Time varaible to record start time
+    clock_t         end;                    // Time varaible to record end times
 
     float           vectorInsertionTime;    // Time to insert elements into vector
     float           listInsertionTime;      // Time to insert elements into linked list
@@ -73,16 +72,27 @@ int main(int argc, char **argv)
     try
         {
         //Insert elements into vector and record time
-        vectorInsertionTime = insertElementsToVector(21, valuesToInsert, myVector);
+        start = clock();
+        insertElementsToVector(21, valuesToInsert, myVector);
+        vectorInsertionTime = computeTime(start, clock());          //end time is current clock value
 
         //Inset elements into list and record time
-        listInsertionTime = insertElementsToList(21, valuesToInsert, myList);
+        start = clock();
+        insertElementsToList(21, valuesToInsert, myList);
+        listInsertionTime = computeTime(start, clock());  
+
 
         //Visit all vector elements and record time 
-        vectorVisitTime = visitAll_vector(myVector);
+        start = clock();
+        myVector.visitAll();    
+        vectorVisitTime = computeTime(start, clock());
+
 
         //Visit all list elements and record time 
-        listVisitTime = visitAll_list(myList);
+        start = clock();
+        myList.visitAll();  
+        listVisitTime = computeTime(start, clock());
+
 
         //Print results 
         rc = printResults("Part 1", "int", 25, "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
@@ -109,26 +119,17 @@ int main(int argc, char **argv)
 /// @param[out] float               time to complete insertion of elements     
 ///
 ///////////////////////////////////////////////////////////////////
-float insertElementsToVector(int numElements, int arrayOfElements[], Vector<int> myVector)
+void insertElementsToVector(int numElements, int arrayOfElements[], Vector<int> myVector)
     {
-    clock_t     start; 
-    clock_t     end; 
-
     int         sizeOfArray = sizeof(arrayOfElements) / sizeof(arrayOfElements[0]);
     int         maxIndex = (sizeOfArray > numElements) ? numElements : sizeOfArray;
-
-    
-    start = clock();            //Start clock
 
     for(int i = 0; i < maxIndex; i++)
         {
         myVector.push_back(arrayOfElements[i]);         //Add elements to list
         }
 
-    end = clock();              //End clock
-
-    //return the time it takes to complete the insertions
-    return computeTime(start, end);
+    return;
     }
 
 
@@ -142,87 +143,18 @@ float insertElementsToVector(int numElements, int arrayOfElements[], Vector<int>
 /// @param[out] float               time to complete insertion of elements     
 ///
 ///////////////////////////////////////////////////////////////////
-float insertElementsToList(int numElements, int arrayOfElements[], List<int> myList)
+void insertElementsToList(int numElements, int arrayOfElements[], List<int> myList)
     {
-    clock_t     start; 
-    clock_t     end; 
-
     int         sizeOfArray = sizeof(arrayOfElements) / sizeof(arrayOfElements[0]);
     int         maxIndex = (sizeOfArray > numElements) ? numElements : sizeOfArray;
 
-    
-    start = clock();            //Start clock
 
     for(int i = 0; i < maxIndex; i++)
         {
         myList.push_back(arrayOfElements[i]);         //Add elements to list
         }
 
-    end = clock();              //End clock
-
-    //return the time it takes to complete the insertions
-    return computeTime(start, end);   
-    }
-
-
-///////////////////////////////////////////////////////////////////
-/// visitAll_vector -- will visit all the elements of the given vector
-///
-/// @param[in]  myVector            vector containing elements to be visited
-///
-/// @param[out] float               time to complete visits of each element   
-///
-///////////////////////////////////////////////////////////////////
-float visitAll_vector(Vector<int> myVector)
-    {
-    clock_t     start; 
-    clock_t     end; 
-
-    int         placeholder;
-    int         sizeOfVector = myVector.size();
-
-    start = clock();            //Start timer
-
-    for(int i = 0; i < sizeOfVector; i++)
-        {
-        placeholder = myVector[i];              
-            // AssignmentoOperation to ensure compiler doesn't skip code 
-            // This will also be done in linked list implementation 
-            // so that the timing can be compared
-        }
-
-    end = clock();                //End timer
-
-    return computeTime(start, end);
-    }
-
-
-///////////////////////////////////////////////////////////////////
-/// visitAll_list -- will visit all the elements of the given vector
-///
-/// @param[in]  myList              linked list containing elements to be visited
-///
-/// @param[out] float               time to complete visits of each element   
-///
-///////////////////////////////////////////////////////////////////
-float visitAll_list(List<int> myList)
-    {
-    clock_t         start; 
-    clock_t         end; 
-
-    int             placeholder;
-
-    start = clock();            //Start timer
-
-    while(myList.size() > 0)
-        {
-        placeholder = myList.front();       //Assign first element to placeholder to match vector visit implementation
-        myList.pop_front();                 //Remove the front element
-        }
-
-    end = clock();                //End timer
-
-    return computeTime(start, end);
+    return; 
     }
 
 
