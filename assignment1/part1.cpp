@@ -9,6 +9,7 @@
 /***INCLUDES******************************************************************/
 #include <iostream>
 #include <string.h>
+#include <cstdlib>
 #include "Vector.h"
 #include "List.h"
 #include <time.h>
@@ -65,7 +66,18 @@ int main(int argc, char **argv)
     float           vectorVisitTime;        // Time to visit all elements in vector
     float           listVisitTime;          // Time to visit all elements in linked list
 
-    int valuesToInsert[] = {2, 5, 7, 12, 32, 1, 23, 45, 56, 78, 89, 34, 23, 12, 21, 23, 11, 123, 345, 567, 34};
+    int             maxNumber = 1000;       // Maximum number to generate a random number
+    int             numVals = 100;          // Number of values to insert into the array -- will change each test
+    int             valuesToInsert[numVals];// Array of values
+    
+    
+    srand(time(NULL));                      //Initalize the rand function
+
+    // Generate random integers to fill in array
+    for(int i = 0; i < numVals; i++)
+        {
+        valuesToInsert[i] = rand() % maxNumber;
+        }
 
 
     try
