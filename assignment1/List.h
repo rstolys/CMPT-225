@@ -43,13 +43,13 @@ class List
             if(i == 0)
                 {
                 currentElement = head;                      //Get the first element in the List
-                first = currentElement.data;                //Assign the data to a variable to place in next element
+                first = currentElement->data;                //Assign the data to a variable to place in next element
                 }
             else 
                 {
-                currentElement = currentElement.next;       //Assign varaible to new element
-                second =  currentElement.data;              //Get the data of the current element and store it 
-                currentElement.data = first;                //Assign the previous data to the current element 
+                currentElement = currentElement->next;       //Assign varaible to new element
+                second =  currentElement->data;              //Get the data of the current element and store it 
+                currentElement->data = first;                //Assign the previous data to the current element 
                 first = second;                             //Save the previous data for the next element
                 }
             }
