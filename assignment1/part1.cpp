@@ -59,7 +59,6 @@ int main(int argc, char **argv)
     List<int>       myList;                 // Linked list to perform operations on
 
     clock_t         start;                  // Time varaible to record start time
-    clock_t         end;                    // Time varaible to record end times
 
     float           vectorInsertionTime;    // Time to insert elements into vector
     float           listInsertionTime;      // Time to insert elements into linked list
@@ -79,22 +78,22 @@ int main(int argc, char **argv)
         //Inset elements into list and record time
         start = clock();
         insertElementsToList(21, valuesToInsert, myList);
-        listInsertionTime = computeTime(start, clock());  
+        listInsertionTime = computeTime(start, clock());
 
 
-        //Visit all vector elements and record time 
+        //Visit all vector elements and record time
         start = clock();
-        myVector.visitAll();    
+        myVector.visitAll();
         vectorVisitTime = computeTime(start, clock());
 
 
-        //Visit all list elements and record time 
+        //Visit all list elements and record time
         start = clock();
-        myList.visitAll();  
+        myList.visitAll();
         listVisitTime = computeTime(start, clock());
 
 
-        //Print results 
+        //Print results
         rc = printResults("Part 1", "int", 25, "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
         }
     catch (const exception& e)
@@ -104,7 +103,7 @@ int main(int argc, char **argv)
         //Set return command to failure
         rc = FAILURE;
         }
-    
+
     return rc;
     }
 
