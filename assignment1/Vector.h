@@ -26,12 +26,12 @@ class Vector
             {
             if(i == 0)
                 {
-                first = myVector[i]; 
+                first = objects[i]; 
                 }
             else 
                 {
-                second = myVector[i];           //These steps will move all the elements in the Vector over 1 position
-                myVector[i] = first;            // This is done so that the compiler does not optimize and skip this code
+                second = objects[i];           //These steps will move all the elements in the Vector over 1 position
+                objects[i] = first;            // This is done so that the compiler does not optimize and skip this code
                 first = second;
                 }
             }

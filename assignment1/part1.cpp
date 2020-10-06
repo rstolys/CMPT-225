@@ -95,7 +95,7 @@ int main(int argc, char **argv)
 
 
         //Print results 
-        rc = printResults("Part 1", "int", 25, "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
+        rc = printResults("Part 1", "int", sizeof(valuesToInsert), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
         }
     catch (const exception& e)
         {
