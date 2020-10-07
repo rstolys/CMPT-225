@@ -34,23 +34,19 @@ class List
     ///////////////////////////////////////////////////////////////////
     void visitAll()
         {
-        Object      first;
-        Object      second;
         Node*       currentElement;
 
         for(int i = 0; i < theSize; i++)
             {
             if(i == 0)
                 {
-                currentElement = head;                      //Get the first element in the List
-                first = currentElement->data;                //Assign the data to a variable to place in next element
+                head->data = tail->data;                        //Assign the first element in the data from the last element 
+                currentElement = head->next;                    //Asssign the current element to the next element
                 }
             else 
                 {
-                currentElement = currentElement->next;       //Assign varaible to new element
-                second =  currentElement->data;              //Get the data of the current element and store it 
-                currentElement->data = first;                //Assign the previous data to the current element 
-                first = second;                             //Save the previous data for the next element
+                currentElement-> = currentElement->next-data;   //Assign data of next element to data of current
+                currentElement = currentElement-next;           //Assign the current element to the next element
                 }
             }
 

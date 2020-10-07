@@ -19,20 +19,16 @@ class Vector
     ///////////////////////////////////////////////////////////////////
     void visitAll()
         {
-        Object      first;
-        Object      second;
-
+    
         for(int i = 0; i < theSize; i++)
             {
             if(i == 0)
                 {
-                first = objects[i]; 
+                objects[i] = objects[theSize - 1];      //Move the final element into the first position
                 }
             else 
-                {
-                second = objects[i];           //These steps will move all the elements in the Vector over 1 position
-                objects[i] = first;            // This is done so that the compiler does not optimize and skip this code
-                first = second;
+                {                                       //These steps will move all the elements in the Vector over 1 position
+                objects[i] = objects[i - 1];            // This is done so that the compiler does not optimize and skip this code
                 }
             }
 
