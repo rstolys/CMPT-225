@@ -67,7 +67,7 @@ int main(int argc, char **argv)
     float           listVisitTime;          // Time to visit all elements in linked list
 
     int             maxNumber = 1000;       // Maximum number to generate a random number
-    int             numVals = 100;          // Number of values to insert into the array -- will change each test
+    int             numVals = 1000000;          // Number of values to insert into the array -- will change each test
     int             valuesToInsert[numVals];// Array of values
     
     
@@ -106,7 +106,7 @@ int main(int argc, char **argv)
 
 
         //Print results 
-        rc = printResults("Part 1", "int", sizeof(valuesToInsert), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
+        rc = printResults("Part 1", "int", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
         }
     catch (const exception& e)
         {
