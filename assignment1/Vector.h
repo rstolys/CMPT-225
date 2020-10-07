@@ -19,7 +19,7 @@ class Vector
     ///////////////////////////////////////////////////////////////////
     void visitAll()
         {
-    
+//    	std::cout << "visiting all elements of vector. Current size: " << theSize << std::endl;
         for(int i = 0; i < theSize; i++)
             {
             if(i == 0)
@@ -30,6 +30,7 @@ class Vector
                 {                                       //These steps will move all the elements in the Vector over 1 position
                 objects[i] = objects[i - 1];            // This is done so that the compiler does not optimize and skip this code
                 }
+//	    std::cout << objects[i] << std::endl;
             }
 
         return;

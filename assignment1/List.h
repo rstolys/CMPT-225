@@ -45,8 +45,8 @@ class List
                 }
             else 
                 {
-                currentElement-> = currentElement->next-data;   //Assign data of next element to data of current
-                currentElement = currentElement-next;           //Assign the current element to the next element
+                currentElement->data = currentElement->next->data;   //Assign data of next element to data of current
+                currentElement = currentElement->next;           //Assign the current element to the next element
                 }
             }
 

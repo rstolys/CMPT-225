@@ -33,9 +33,9 @@ using namespace std;
 int printResults(string partNum, string elementType, int numElements, string timeUnits, float vectorInsertTime, 
                  float listInsertionTime, float vectorVisitTime, float listVisitTime);
 
-void insertElementsToVector(int numElements, int arrayOfElements[], Vector<int> myVector);
+void insertElementsToVector(int numElements, int arrayOfElements[], Vector<int>* myVector);
 
-void insertElementsToList(int numElements, int arrayOfElements[], List<int> myVector);
+void insertElementsToList(int numElements, int arrayOfElements[], List<int>* myVector);
 
 float computeTime(clock_t start, clock_t end);
 
@@ -69,8 +69,8 @@ int main(int argc, char **argv)
     int             maxNumber = 1000;       // Maximum number to generate a random number
     int             numVals = 1000000;          // Number of values to insert into the array -- will change each test
     int             valuesToInsert[numVals];// Array of values
-    
-    
+
+
     srand(time(NULL));                      //Initalize the rand function
 
     // Generate random integers to fill in array
@@ -84,12 +84,12 @@ int main(int argc, char **argv)
         {
         //Insert elements into vector and record time
         start = clock();
-        insertElementsToVector(21, valuesToInsert, myVector);
+        insertElementsToVector(numVals, valuesToInsert, &myVector);
         vectorInsertionTime = computeTime(start, clock());          //end time is current clock value
 
         //Inset elements into list and record time
         start = clock();
-        insertElementsToList(21, valuesToInsert, myList);
+        insertElementsToList(numVals, valuesToInsert, &myList);
         listInsertionTime = computeTime(start, clock());
 
 
@@ -130,14 +130,12 @@ int main(int argc, char **argv)
 /// @param[out] float               time to complete insertion of elements     
 ///
 ///////////////////////////////////////////////////////////////////
-void insertElementsToVector(int numElements, int arrayOfElements[], Vector<int> myVector)
+void insertElementsToVector(int numElements, int arrayOfElements[], Vector<int>* myVector)
     {
-    int         sizeOfArray = sizeof(arrayOfElements) / sizeof(arrayOfElements[0]);
-    int         maxIndex = (sizeOfArray > numElements) ? numElements : sizeOfArray;
 
-    for(int i = 0; i < maxIndex; i++)
+    for(int i = 0; i < numElements; i++)
         {
-        myVector.push_back(arrayOfElements[i]);         //Add elements to list
+        myVector->push_back(arrayOfElements[i]);         //Add elements to list
         }
 
     return;
@@ -154,18 +152,15 @@ void insertElementsToVector(int numElements, int arrayOfElements[], Vector<int> 
 /// @param[out] float               time to complete insertion of elements     
 ///
 ///////////////////////////////////////////////////////////////////
-void insertElementsToList(int numElements, int arrayOfElements[], List<int> myList)
+void insertElementsToList(int numElements, int arrayOfElements[], List<int>* myList)
     {
-    int         sizeOfArray = sizeof(arrayOfElements) / sizeof(arrayOfElements[0]);
-    int         maxIndex = (sizeOfArray > numElements) ? numElements : sizeOfArray;
 
-
-    for(int i = 0; i < maxIndex; i++)
+    for(int i = 0; i < numElements; i++)
         {
-        myList.push_back(arrayOfElements[i]);         //Add elements to list
+        myList->push_back(arrayOfElements[i]);         //Add elements to list
         }
 
-    return; 
+    return;
     }
 
 
@@ -198,16 +193,16 @@ int printResults(string partNum, string elementType, int numElements, string tim
         cout << MY_LOGIN_ID << endl;
 
         //Print program information
-        cout << "Program:" << partNum << endl;
-        cout << "Type of Elements:" << elementType << endl;
-        cout << "Number of Elements:" << numElements << endl;
-        cout << "Time Units:" << timeUnits << endl;
+        cout << "Program: " << partNum << endl;
+        cout << "Type of Elements: " << elementType << endl;
+        cout << "Number of Elements: " << numElements << endl;
+        cout << "Time Units: " << timeUnits << endl;
 
         //Print time for insertions and visits
-        cout << "Time for Vector Insertion:" << vectorInsertTime << endl;
-        cout << "Time for List Insertion:" << listInsertionTime << endl;
-        cout << "Time for Vector Visiting:" << vectorVisitTime << endl;
-        cout << "Time for List Visiting:" << listVisitTime << endl;
+        cout << "Time for Vector Insertion: " << vectorInsertTime << endl;
+        cout << "Time for List Insertion: " << listInsertionTime << endl;
+        cout << "Time for Vector Visiting: " << vectorVisitTime << endl;
+        cout << "Time for List Visiting: " << listVisitTime << endl;
 
         cout << endl;           //print blank line
 
