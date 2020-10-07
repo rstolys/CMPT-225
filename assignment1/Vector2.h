@@ -36,6 +36,37 @@ class Vector
         }
 
 
+    ///////////////////////////////////////////////////////////////////
+    /// push_front -- will add an element to the front of the vector
+    ///
+    /// @param  none            vector containing elements to be visited
+    ///
+    ///////////////////////////////////////////////////////////////////
+    void push_front(const Object x)
+        {
+        
+        //If out array is at its capaciity
+        if(theSize == theCapacity)
+            {
+            reserve( 2 * theCapacity + 1 );     //allocate more space for the vector
+            }
+
+        //We need to take all of the elements and move them back 1 position
+        for(int i = theSize; i > 0; i--)
+            {
+            objects[i] = objects[i - 1];            //Take the object before the current object and assign it to the next element 
+            }
+        
+        //Asssign the first element the element given
+        objects[0] = x;
+
+        //Increment the size of the array 
+        theSize++;
+
+        return;
+        }
+
+
     explicit Vector( int initSize = 0 )
       : theSize{ initSize }, theCapacity{ initSize + SPARE_CAPACITY }
       { objects = new Object[ theCapacity ]; }
