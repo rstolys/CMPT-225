@@ -27,15 +27,23 @@ using namespace std;
 
 
 /***GLOBAL VARIABLES**********************************************************/
-
+//NONE
 
 /***FUNCTION DECLARATIONS*****************************************************/
 int printResults(string partNum, string elementType, int numElements, string timeUnits, float vectorInsertTime, 
                  float listInsertionTime, float vectorVisitTime, float listVisitTime);
 
-void insertElementsToVector(int numElements, int arrayOfElements[], Vector<int>* myVector);
+void insertElementsToVector_int(int numElements, int arrayOfElements[], Vector<int>* myVector);
 
-void insertElementsToList(int numElements, int arrayOfElements[], List<int>* myVector);
+void insertElementsToList_int(int numElements, int arrayOfElements[], List<int>* myVector);
+
+void insertElementsToVector_char(int numElements, char arrayOfElements[], Vector<char>* myVector);
+
+void insertElementsToList_char(int numElements, char arrayOfElements[], List<char>* myVector);
+
+void insertElementsToVector_float(int numElements, float arrayOfElements[], Vector<float>* myVector);
+
+void insertElementsToList_float(int numElements, float arrayOfElements[], List<float>* myVector);
 
 float computeTime(clock_t start, clock_t end);
 
@@ -56,65 +64,15 @@ int main(int argc, char **argv)
     {
     int             rc;                     // Return Command
 
-    Vector<int>     myVector;               // Vector list to perform operations on
-    List<int>       myList;                 // Linked list to perform operations on
+    //Call function to test insertion and visits with ints
+    rc = main_int(argc, argv);
 
-    clock_t         start;                  // Time varaible to record start time
+    //Call function to test insertion and visits with chars
+    //rc = main_char(argc, argv);
 
-    float           vectorInsertionTime;    // Time to insert elements into vector
-    float           listInsertionTime;      // Time to insert elements into linked list
-    float           vectorVisitTime;        // Time to visit all elements in vector
-    float           listVisitTime;          // Time to visit all elements in linked list
+    //Call function to test insertion and visits with floats
+    //rc = main_float(argc, argv);
 
-    int             maxNumber = 1000;       // Maximum number to generate a random number
-    int             numVals = 100000;          // Number of values to insert into the array -- will change each test
-    int             valuesToInsert[numVals];// Array of values
-
-
-    srand(time(NULL));                      //Initalize the rand function
-
-    // Generate random integers to fill in array
-    for(int i = 0; i < numVals; i++)
-        {
-        valuesToInsert[i] = rand() % maxNumber;
-        }
-
-
-    try
-        {
-        //Insert elements into vector and record time
-        start = clock();
-        insertElementsToVector(numVals, valuesToInsert, &myVector);
-        vectorInsertionTime = computeTime(start, clock());          //end time is current clock value
-
-        //Inset elements into list and record time
-        start = clock();
-        insertElementsToList(numVals, valuesToInsert, &myList);
-        listInsertionTime = computeTime(start, clock());
-
-
-        //Visit all vector elements and record time
-        start = clock();
-        myVector.visitAll();
-        vectorVisitTime = computeTime(start, clock());
-
-
-        //Visit all list elements and record time
-        start = clock();
-        myList.visitAll();
-        listVisitTime = computeTime(start, clock());
-
-
-        //Print results 
-        rc = printResults("Part 2", "int", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
-        }
-    catch (const exception& e)
-        {
-        cerr << e.what() << endl;
-
-        //Set return command to failure
-        rc = FAILURE;
-        }
 
     return rc;
     }
@@ -130,7 +88,7 @@ int main(int argc, char **argv)
 /// @param[out] float               time to complete insertion of elements     
 ///
 ///////////////////////////////////////////////////////////////////
-void insertElementsToVector(int numElements, int arrayOfElements[], Vector<int>* myVector)
+void insertElementsToVector_int(int numElements, int arrayOfElements[], Vector<int>* myVector)
     {
 
     for(int i = 0; i < numElements; i++)
@@ -152,7 +110,95 @@ void insertElementsToVector(int numElements, int arrayOfElements[], Vector<int>*
 /// @param[out] float               time to complete insertion of elements     
 ///
 ///////////////////////////////////////////////////////////////////
-void insertElementsToList(int numElements, int arrayOfElements[], List<int>* myList)
+void insertElementsToList_int(int numElements, int arrayOfElements[], List<int>* myList)
+    {
+
+    for(int i = 0; i < numElements; i++)
+        {
+        myList->push_front(arrayOfElements[i]);         //Add elements to list
+        }
+
+    return;
+    }
+
+
+///////////////////////////////////////////////////////////////////
+/// insertElementsToVector -- fills vector will elements defined in arrayOfElements
+///
+/// @param[in]  numElements         number of elements to fill, could be less than length of array
+/// @param[in]  arrayOfElements[]   array of elements
+/// @param[in]  myVector            vector to be filled
+///
+/// @param[out] float               time to complete insertion of elements     
+///
+///////////////////////////////////////////////////////////////////
+void insertElementsToVector_char(int numElements, char arrayOfElements[], Vector<char>* myVector)
+    {
+
+    for(int i = 0; i < numElements; i++)
+        {
+        myVector->push_front(arrayOfElements[i]);         //Add elements to list
+        }
+
+    return;
+    }
+
+
+///////////////////////////////////////////////////////////////////
+/// insertElementsToList -- fills vector will elements defined in arrayOfElements
+///
+/// @param[in]  numElements         number of elements to fill, could be less than length of array
+/// @param[in]  arrayOfElements[]   array of elements
+/// @param[in]  myList              list to be filled
+///
+/// @param[out] float               time to complete insertion of elements     
+///
+///////////////////////////////////////////////////////////////////
+void insertElementsToList_char(int numElements, char arrayOfElements[], List<char>* myList)
+    {
+
+    for(int i = 0; i < numElements; i++)
+        {
+        myList->push_front(arrayOfElements[i]);         //Add elements to list
+        }
+
+    return;
+    }
+
+
+///////////////////////////////////////////////////////////////////
+/// insertElementsToVector -- fills vector will elements defined in arrayOfElements
+///
+/// @param[in]  numElements         number of elements to fill, could be less than length of array
+/// @param[in]  arrayOfElements[]   array of elements
+/// @param[in]  myVector            vector to be filled
+///
+/// @param[out] float               time to complete insertion of elements     
+///
+///////////////////////////////////////////////////////////////////
+void insertElementsToVector_float(int numElements, float arrayOfElements[], Vector<float>* myVector)
+    {
+
+    for(int i = 0; i < numElements; i++)
+        {
+        myVector->push_front(arrayOfElements[i]);         //Add elements to list
+        }
+
+    return;
+    }
+
+
+///////////////////////////////////////////////////////////////////
+/// insertElementsToList -- fills vector will elements defined in arrayOfElements
+///
+/// @param[in]  numElements         number of elements to fill, could be less than length of array
+/// @param[in]  arrayOfElements[]   array of elements
+/// @param[in]  myList              list to be filled
+///
+/// @param[out] float               time to complete insertion of elements     
+///
+///////////////////////////////////////////////////////////////////
+void insertElementsToList_float(int numElements, float arrayOfElements[], List<float>* myList)
     {
 
     for(int i = 0; i < numElements; i++)
@@ -233,4 +279,231 @@ int printResults(string partNum, string elementType, int numElements, string tim
 float computeTime(clock_t start, clock_t end)
     {
     return (float) ((end - start) / ((double) CLOCKS_PER_SEC / 1000));
+    }
+
+
+///////////////////////////////////////////////////////////////////
+/// MAIN FUNCTION
+///
+/// @param[in]  argc    number of command line arguements
+/// @param[in]  argv    array of command line arguements
+///
+///////////////////////////////////////////////////////////////////
+int main_int(int argc, char **argv)
+    {
+    int             rc;                     // Return Command
+
+    Vector<int>     myVector;               // Vector list to perform operations on
+    List<int>       myList;                 // Linked list to perform operations on
+
+    clock_t         start;                  // Time varaible to record start time
+
+    float           vectorInsertionTime;    // Time to insert elements into vector
+    float           listInsertionTime;      // Time to insert elements into linked list
+    float           vectorVisitTime;        // Time to visit all elements in vector
+    float           listVisitTime;          // Time to visit all elements in linked list
+
+    int             maxNumber = 1000;       // Maximum number to generate a random number
+    int             numVals = 1000000;          // Number of values to insert into the array -- will change each test
+    int             valuesToInsert[numVals];// Array of values
+
+
+    srand(time(NULL));                      //Initalize the rand function
+
+    // Generate random integers to fill in array
+    for(int i = 0; i < numVals; i++)
+        {
+        valuesToInsert[i] = rand() % maxNumber;
+        }
+
+
+    try
+        {
+        //Insert elements into vector and record time
+        start = clock();
+        insertElementsToVector_int(numVals, valuesToInsert, &myVector);
+        vectorInsertionTime = computeTime(start, clock());          //end time is current clock value
+
+        //Inset elements into list and record time
+        start = clock();
+        insertElementsToList_int(numVals, valuesToInsert, &myList);
+        listInsertionTime = computeTime(start, clock());
+
+
+        //Visit all vector elements and record time
+        start = clock();
+        myVector.visitAll();
+        vectorVisitTime = computeTime(start, clock());
+
+
+        //Visit all list elements and record time
+        start = clock();
+        myList.visitAll();
+        listVisitTime = computeTime(start, clock());
+
+
+        //Print results 
+        rc = printResults("Part 1", "int", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
+        }
+    catch (const exception& e)
+        {
+        cerr << e.what() << endl;
+
+        //Set return command to failure
+        rc = FAILURE;
+        }
+
+    return rc;
+    }
+
+
+///////////////////////////////////////////////////////////////////
+/// MAIN FUNCTION -- testing characters as values
+///
+/// @param[in]  argc    number of command line arguements
+/// @param[in]  argv    array of command line arguements
+///
+///////////////////////////////////////////////////////////////////
+int main_char(int argc, char **argv)
+    {
+    int             rc;                     // Return Command
+
+    Vector<char>     myVector;               // Vector list to perform operations on
+    List<char>       myList;                 // Linked list to perform operations on
+
+    clock_t         start;                  // Time varaible to record start time
+
+    float           vectorInsertionTime;    // Time to insert elements into vector
+    float           listInsertionTime;      // Time to insert elements into linked list
+    float           vectorVisitTime;        // Time to visit all elements in vector
+    float           listVisitTime;          // Time to visit all elements in linked list
+
+    //int             maxNumber = 1000;       // Maximum number to generate a random number
+    int             numVals = 100;          // Number of values to insert into the array -- will change each test
+    char            valuesToInsert[numVals];// Array of values
+    
+    char            valueOptions[26] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+
+
+    srand(time(NULL));                      //Initalize the rand function
+
+    // Generate random character to fill into array
+    for(int i = 0; i < numVals; i++)
+        {
+        valuesToInsert[i] = valueOptions[rand() % 26];
+        }
+
+
+    try
+        {
+        //Insert elements into vector and record time
+        start = clock();
+        insertElementsToVector_char(numVals, valuesToInsert, &myVector);
+        vectorInsertionTime = computeTime(start, clock());          //end time is current clock value
+
+        //Inset elements into list and record time
+        start = clock();
+        insertElementsToList_char(numVals, valuesToInsert, &myList);
+        listInsertionTime = computeTime(start, clock());
+
+
+        //Visit all vector elements and record time
+        start = clock();
+        myVector.visitAll();
+        vectorVisitTime = computeTime(start, clock());
+
+
+        //Visit all list elements and record time
+        start = clock();
+        myList.visitAll();
+        listVisitTime = computeTime(start, clock());
+
+
+        //Print results 
+        rc = printResults("Part 1", "char", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
+        }
+    catch (const exception& e)
+        {
+        cerr << e.what() << endl;
+
+        //Set return command to failure
+        rc = FAILURE;
+        }
+
+    return rc;
+    }
+
+
+///////////////////////////////////////////////////////////////////
+/// MAIN FUNCTION -- testing floats as values
+///
+/// @param[in]  argc    number of command line arguements
+/// @param[in]  argv    array of command line arguements
+///
+///////////////////////////////////////////////////////////////////
+int main_float(int argc, char **argv)
+    {
+    int             rc;                     // Return Command
+
+    Vector<float>     myVector;               // Vector list to perform operations on
+    List<float>       myList;                 // Linked list to perform operations on
+
+    clock_t         start;                  // Time varaible to record start time
+
+    float           vectorInsertionTime;    // Time to insert elements into vector
+    float           listInsertionTime;      // Time to insert elements into linked list
+    float           vectorVisitTime;        // Time to visit all elements in vector
+    float           listVisitTime;          // Time to visit all elements in linked list
+
+    float           maxNumber = 1000.0;     // Maximum number to generate a random number
+    int             numVals = 100;          // Number of values to insert into the array -- will change each test
+    float           valuesToInsert[numVals];// Array of values
+    
+
+    srand(time(NULL));                      //Initalize the rand function
+
+    // Generate random character to fill into array
+    for(int i = 0; i < numVals; i++)
+        {
+        valuesToInsert[i] = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / maxNumber));
+        }
+
+
+    try
+        {
+        //Insert elements into vector and record time
+        start = clock();
+        insertElementsToVector_float(numVals, valuesToInsert, &myVector);
+        vectorInsertionTime = computeTime(start, clock());          //end time is current clock value
+
+        //Inset elements into list and record time
+        start = clock();
+        insertElementsToList_float(numVals, valuesToInsert, &myList);
+        listInsertionTime = computeTime(start, clock());
+
+
+        //Visit all vector elements and record time
+        start = clock();
+        myVector.visitAll();
+        vectorVisitTime = computeTime(start, clock());
+
+
+        //Visit all list elements and record time
+        start = clock();
+        myList.visitAll();
+        listVisitTime = computeTime(start, clock());
+
+
+        //Print results 
+        rc = printResults("Part 1", "float", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
+        }
+    catch (const exception& e)
+        {
+        cerr << e.what() << endl;
+
+        //Set return command to failure
+        rc = FAILURE;
+        }
+
+    return rc;
     }
