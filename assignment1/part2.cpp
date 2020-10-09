@@ -30,6 +30,12 @@ using namespace std;
 //NONE
 
 /***FUNCTION DECLARATIONS*****************************************************/
+int main_int(int numVals);
+
+int main_char(int numVals);
+
+int main_float(int numVals);
+
 int printResults(string partNum, string elementType, int numElements, string timeUnits, float vectorInsertTime, 
                  float listInsertionTime, float vectorVisitTime, float listVisitTime);
 
@@ -65,13 +71,13 @@ int main(int argc, char **argv)
     int             rc;                     // Return Command
 
     //Call function to test insertion and visits with ints
-    rc = main_int(argc, argv);
+    rc = main_int(100);
 
     //Call function to test insertion and visits with chars
-    //rc = main_char(argc, argv);
+    rc = main_char(100);
 
     //Call function to test insertion and visits with floats
-    //rc = main_float(argc, argv);
+    rc = main_float(100);
 
 
     return rc;
@@ -283,13 +289,12 @@ float computeTime(clock_t start, clock_t end)
 
 
 ///////////////////////////////////////////////////////////////////
-/// MAIN FUNCTION
+/// main function for integer testing
 ///
-/// @param[in]  argc    number of command line arguements
-/// @param[in]  argv    array of command line arguements
+/// @param[in]  numVals    Number of values to insert into the array
 ///
 ///////////////////////////////////////////////////////////////////
-int main_int(int argc, char **argv)
+int main_int(int numVals)
     {
     int             rc;                     // Return Command
 
@@ -304,7 +309,6 @@ int main_int(int argc, char **argv)
     float           listVisitTime;          // Time to visit all elements in linked list
 
     int             maxNumber = 1000;       // Maximum number to generate a random number
-    int             numVals = 1000000;          // Number of values to insert into the array -- will change each test
     int             valuesToInsert[numVals];// Array of values
 
 
@@ -358,18 +362,17 @@ int main_int(int argc, char **argv)
 
 
 ///////////////////////////////////////////////////////////////////
-/// MAIN FUNCTION -- testing characters as values
+/// main function for character testing
 ///
-/// @param[in]  argc    number of command line arguements
-/// @param[in]  argv    array of command line arguements
+/// @param[in]  numVals    Number of values to insert into the array
 ///
 ///////////////////////////////////////////////////////////////////
-int main_char(int argc, char **argv)
+int main_char(int numVals)
     {
     int             rc;                     // Return Command
 
-    Vector<char>     myVector;               // Vector list to perform operations on
-    List<char>       myList;                 // Linked list to perform operations on
+    Vector<char>     myVector;              // Vector list to perform operations on
+    List<char>       myList;                // Linked list to perform operations on
 
     clock_t         start;                  // Time varaible to record start time
 
@@ -378,8 +381,6 @@ int main_char(int argc, char **argv)
     float           vectorVisitTime;        // Time to visit all elements in vector
     float           listVisitTime;          // Time to visit all elements in linked list
 
-    //int             maxNumber = 1000;       // Maximum number to generate a random number
-    int             numVals = 100;          // Number of values to insert into the array -- will change each test
     char            valuesToInsert[numVals];// Array of values
     
     char            valueOptions[26] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
@@ -435,18 +436,17 @@ int main_char(int argc, char **argv)
 
 
 ///////////////////////////////////////////////////////////////////
-/// MAIN FUNCTION -- testing floats as values
+/// main function for float values testing
 ///
-/// @param[in]  argc    number of command line arguements
-/// @param[in]  argv    array of command line arguements
+/// @param[in]  numVals    Number of values to insert into the array
 ///
 ///////////////////////////////////////////////////////////////////
-int main_float(int argc, char **argv)
+int main_float(int numVals)
     {
     int             rc;                     // Return Command
 
-    Vector<float>     myVector;               // Vector list to perform operations on
-    List<float>       myList;                 // Linked list to perform operations on
+    Vector<float>     myVector;             // Vector list to perform operations on
+    List<float>       myList;               // Linked list to perform operations on
 
     clock_t         start;                  // Time varaible to record start time
 
@@ -456,7 +456,6 @@ int main_float(int argc, char **argv)
     float           listVisitTime;          // Time to visit all elements in linked list
 
     float           maxNumber = 1000.0;     // Maximum number to generate a random number
-    int             numVals = 100;          // Number of values to insert into the array -- will change each test
     float           valuesToInsert[numVals];// Array of values
     
 
