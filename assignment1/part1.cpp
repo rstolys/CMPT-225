@@ -70,13 +70,13 @@ int main(int argc, char **argv)
     int rc;                     // Return Command
 
     //Call function to test insertion and visits with ints
-    rc = main_int(100);
+    rc = main_int(1000);
 
     //Call function to test insertion and visits with chars
-    rc = main_char(100);
+    //rc = main_char(1000);
 
     //Call function to test insertion and visits with floats
-    rc = main_float(100);
+    //rc = main_float(1000);
 
 
     return rc;
