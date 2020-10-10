@@ -347,7 +347,7 @@ int main_int(int numVals)
 
 
         //Print results 
-        rc = printResults("Part 1", "int", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
+        rc = printResults("Part 2", "int", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
         }
     catch (const exception& e)
         {
@@ -421,7 +421,7 @@ int main_char(int numVals)
 
 
         //Print results 
-        rc = printResults("Part 1", "char", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
+        rc = printResults("Part 2", "char", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
         }
     catch (const exception& e)
         {
@@ -494,7 +494,7 @@ int main_float(int numVals)
 
 
         //Print results 
-        rc = printResults("Part 1", "float", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
+        rc = printResults("Part 2", "float", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
         }
     catch (const exception& e)
         {

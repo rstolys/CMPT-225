@@ -13,4 +13,5 @@ part2.o: part2.cpp Vector2.h dsexceptions.h List.h
 	g++ -Wall -o part2.o -c part2.cpp
 
 clean:
-	rm -f part1 *.o
+	rm -f part1 *.o 
+	rm -f part2 *.o 
