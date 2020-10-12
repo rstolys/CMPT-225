@@ -74,10 +74,17 @@ int main(int argc, char **argv)
     rc = main_int(1000);
 
     //Call function to test insertion and visits with chars
+<<<<<<< HEAD
     //rc = main_char(1000);
 
     //Call function to test insertion and visits with floats
     //rc = main_float(1000);
+=======
+    //rc = main_char(100);
+
+    //Call function to test insertion and visits with floats
+    //rc = main_float(100);
+>>>>>>> f9d64fa61ce08b31ab79edb7c2b15efdc7d94799
 
 
     return rc;
@@ -347,7 +354,7 @@ int main_int(int numVals)
 
 
         //Print results 
-        rc = printResults("Part 1", "int", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
+        rc = printResults("Part 2", "int", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
         }
     catch (const exception& e)
         {
@@ -421,7 +428,7 @@ int main_char(int numVals)
 
 
         //Print results 
-        rc = printResults("Part 1", "char", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
+        rc = printResults("Part 2", "char", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
         }
     catch (const exception& e)
         {
@@ -494,7 +501,7 @@ int main_float(int numVals)
 
 
         //Print results 
-        rc = printResults("Part 1", "float", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
+        rc = printResults("Part 2", "float", sizeof(valuesToInsert)/ sizeof(valuesToInsert[0]), "milliseconds", vectorInsertionTime, listInsertionTime, vectorVisitTime, listVisitTime);
         }
     catch (const exception& e)
         {
