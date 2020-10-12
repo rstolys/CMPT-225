@@ -73,10 +73,10 @@ int main(int argc, char **argv)
     rc = main_int(100);
 
     //Call function to test insertion and visits with chars
-    rc = main_char(100);
+    //rc = main_char(100);
 
     //Call function to test insertion and visits with floats
-    rc = main_float(100);
+    //rc = main_float(100);
 
 
     return rc;
