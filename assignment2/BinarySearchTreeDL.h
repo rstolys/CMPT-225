@@ -228,9 +228,9 @@ class BinarySearchTree
 
             //Display current node links
             out << t->element << ")  @:";
-            out << &t << "    "; 
-            out << "L:" <<&(t->left) << "  "; 
-            out << "R:" <<&(t->right) << endl;
+            out << t << "    "; 
+            out << "L:" << t->left << "  "; 
+            out << "R:" << t->right << endl;
          
             //Display next elements
             displayLinks(t->left, depth+1, out);

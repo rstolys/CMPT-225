@@ -45,7 +45,7 @@ int main(int argc, char **argv)
     cout << "Start of BSTtestDD" << endl;
 
     //Insert elements into the tree
-    for(i = 1 ; i < num_Keys ; i++)
+    for(i = 0; i < num_Keys ; i++)
         {
         t.insert(keys[i]);
         }

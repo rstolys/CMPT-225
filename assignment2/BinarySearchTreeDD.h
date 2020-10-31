@@ -34,14 +34,13 @@ class BinarySearchTree
     ///////////////////////////////////////////////////////////////////
     void displayDeep(int k)
         {
-        int numNodes = 0; 
-
+       
         if(!isEmpty())          //if not empty
             {
-            numNodes = displayDeep(root, 0, depth);
+            displayDeep(root, 0, k);
             }
             
-        return numNodes;
+        return;
         }
 
     BinarySearchTree( ) : root{ nullptr }
@@ -218,7 +217,9 @@ class BinarySearchTree
             if(currentDepth >= depth)
                 {
                 //Display the current node subtree 
-                displayTree(t, 0, cout);
+                cout << "Node: " << t->element << endl;
+		displayTree(t, 0, cout);
+		cout << endl << endl;
 
                 //Display the subtrees below the current one
                 if(t->left != nullptr)
