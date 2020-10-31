@@ -61,8 +61,8 @@ int main(int argc, char **argv)
     t.displayTree(); 
 
     //Print the number of leaves
-    cout << "The number of nodes at depth 2 or greater is 12" << endl;
-    cout << "The computed number of nodes at depth 2 or greater is: " << t.countDeep(2) << endl;
+    cout << "The number of nodes at depth 3 or greater is 16" << endl;
+    cout << "The computed number of nodes at depth 3 or greater is: " << t.countDeep(3) << endl;
 
     return SUCCESS;
     }
