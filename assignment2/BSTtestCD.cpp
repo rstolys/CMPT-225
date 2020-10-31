@@ -7,7 +7,7 @@
 
 /***INCLUDES******************************************************************/
 #include <iostream>
-#include "BinarySearchTreeCD.h"
+#include "BinarySearchTree.h"
 
 using namespace std;
 
@@ -40,8 +40,8 @@ int main(int argc, char **argv)
     BinarySearchTree<int> t;
     
     int i;
-    int num_Keys = 15;
-    int keys[num_Keys] = {8, 5, 3, 1, 4, 7, 6, 12, 10, 11, 15, 14, 13, 18, 17};
+    int num_Keys = 23;
+    int keys[num_Keys] = {20, 10, 30, 5, 2, 1, 12, 15, 13, 18, 7, 6, 9, 25, 23, 22, 39, 35, 31, 38, 45, 40, 60};
 
     cout << "Start of BSTtestCD" << endl;
 

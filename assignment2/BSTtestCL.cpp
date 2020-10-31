@@ -7,7 +7,7 @@
 
 /***INCLUDES******************************************************************/
 #include <iostream>
-#include "BinarySearchTreeCL.h"
+#include "BinarySearchTree.h"
 
 using namespace std;
 

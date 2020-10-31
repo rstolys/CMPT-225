@@ -26,6 +26,83 @@ template <typename Comparable>
 class BinarySearchTree
 {
   public:
+    ///////////////////////////////////////////////////////////////////
+    /// countLeaves -- will count the number of leaves in the binary tree
+    ///
+    /// @param none             //No parameters needed for this function
+    ///
+    ///////////////////////////////////////////////////////////////////
+    int countLeaves()
+        {
+        int numLeaves = 0; 
+
+        if(!isEmpty())          //if not empty
+            {
+            numLeaves = countLeaves(root);
+            }
+            
+        return numLeaves;
+        }
+
+
+    ///////////////////////////////////////////////////////////////////
+    /// displayLinks -- will diplay the tree keys and and address of each node plus its children
+    ///
+    /// @param none             //No parameters needed for this function
+    ///
+    ///////////////////////////////////////////////////////////////////
+    void displayLinks()
+        {
+        if(isEmpty())
+            {
+            cout << "Empty tree" << endl;
+            }   
+        else
+            {
+            displayLinks(root, 0, cout);
+            }
+            
+        return;
+        }
+
+
+    ///////////////////////////////////////////////////////////////////
+    /// countDeep -- will count the number of nodes beyond the depth specified
+    ///
+    /// @param[in] k        The depth of the BST to begin counting from           
+    ///
+    ///////////////////////////////////////////////////////////////////
+    int countDeep(int k)
+        {
+        int numNodes = 0; 
+
+        if(!isEmpty())          //if not empty
+            {
+            numNodes = countDeep(root, 0, k);
+            }
+            
+        return numNodes;
+        }
+
+
+    ///////////////////////////////////////////////////////////////////
+    /// displayDeep -- will display the subtrees of all nodes beyond the depth specified
+    ///
+    /// @param[in] k            The depth of the BST to begin displaying from           
+    ///
+    ///////////////////////////////////////////////////////////////////
+    void displayDeep(int k)
+        {
+       
+        if(!isEmpty())          //if not empty
+            {
+            displayDeep(root, 0, k);
+            }
+            
+        return;
+        }
+
+
     BinarySearchTree( ) : root{ nullptr }
     {
     }
@@ -184,6 +261,156 @@ class BinarySearchTree
 
     BinaryNode *root;
 
+    ///////////////////////////////////////////////////////////////////
+    /// *private* countLeaves -- will count the number of leaves the tree has
+    ///
+    /// @param[in]      t           BST node linking to tree
+    ///
+    ///////////////////////////////////////////////////////////////////
+    int countLeaves(BinaryNode *t)
+        {
+        int numLeaves = 0; 
+
+        if(t != nullptr)
+            {
+            if(t->left == nullptr && t->right == nullptr)
+                {
+                numLeaves = 1; 
+                }
+            else 
+                {
+                if(t->left != nullptr)
+                    {
+                    numLeaves += countLeaves(t->left);
+                    }
+                
+                if(t->right != nullptr)
+                    {
+                    numLeaves += countLeaves(t->right);
+                    }
+                }
+            }
+            
+        return numLeaves;
+        }
+
+
+    ///////////////////////////////////////////////////////////////////
+    /// *private* displayLinks -- will be private version used for recursion
+    ///
+    /// @param[in]      t           BST node linking to tree
+    /// @param[in]      depth       Depth of the BST t
+    /// @param[in]      out         location of output (could be: file, console etc)
+    ///
+    ///////////////////////////////////////////////////////////////////
+    void displayLinks(BinaryNode *t, int depth, ostream & out)
+        {
+        const int SHIFT = 4 ;
+
+        if( t != nullptr )
+            {
+            for(int i = 0 ; i < SHIFT*depth ; i++)
+                { 
+                out << " " ; 
+                }
+
+            //Display current node links
+            out << t->element << ")  @:";
+            out << t << "    "; 
+            out << "L:" << t->left << "  "; 
+            out << "R:" << t->right << endl;
+         
+            //Display next elements
+            displayLinks(t->left, depth+1, out);
+            displayLinks(t->right, depth+1, out);
+            }
+        
+        return;
+        }
+
+
+    ///////////////////////////////////////////////////////////////////
+    /// *private* countDeep -- will count the number of leaves the tree has
+    ///
+    /// @param[in]      t                   BST node linking to tree
+    /// @param[in]      currentDepth        Current depth of node
+    /// @param[in]      depth               Depth of tree to start counting nodes of
+    ///
+    ///////////////////////////////////////////////////////////////////
+    int countDeep(BinaryNode *t, int currentDepth, int depth)
+        {
+        int numNodes = 0; 
+
+        if(t != nullptr)
+            {
+            if(currentDepth >= depth)
+                {
+                //We are at 1 node of proper depth
+                numNodes = 1; 
+
+                //Determine how many other nodes there are
+                if(t->left != nullptr)
+                    {
+                    numNodes += countDeep(t->left, currentDepth + 1, depth);
+                    }
+                
+                if(t->right != nullptr)
+                    {
+                    numNodes += countDeep(t->right, currentDepth + 1, depth);
+                    }
+                }
+            else 
+                {
+                numNodes += countDeep(t->left, currentDepth + 1, depth);
+                numNodes += countDeep(t->right, currentDepth + 1, depth);
+                }
+   
+            }
+            
+        return numNodes;
+        }
+
+
+    ///////////////////////////////////////////////////////////////////
+    /// *private* displayDeep -- will count the number of leaves the tree has
+    ///
+    /// @param[in]      t                   BST node linking to tree
+    /// @param[in]      currentDepth        Current depth of node
+    /// @param[in]      depth               Depth of tree to start counting nodes of
+    ///
+    ///////////////////////////////////////////////////////////////////
+    void displayDeep(BinaryNode *t, int currentDepth, int depth)
+        {
+        if(t != nullptr)
+            {
+            if(currentDepth >= depth)
+                {
+                //Display the current node subtree 
+                cout << "Node: " << t->element << endl;
+		displayTree(t, 0, cout);
+		cout << endl << endl;
+
+                //Display the subtrees below the current one
+                if(t->left != nullptr)
+                    {
+                    displayDeep(t->left, currentDepth + 1, depth);
+                    }
+                
+                if(t->right != nullptr)
+                    {
+                    displayDeep(t->right, currentDepth + 1, depth);
+                    }
+                }
+            else 
+                {
+                displayDeep(t->left, currentDepth + 1, depth);
+                displayDeep(t->right, currentDepth + 1, depth);
+                }
+   
+            }
+            
+        return;
+        }
 
     /**
      * Internal method to insert into a subtree.

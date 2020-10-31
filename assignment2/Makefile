@@ -13,7 +13,7 @@ BSTtest.o: BSTtest.cpp BinarySearchTree.h dsexceptions.h
 BSTtest2: BSTtest2.o
 	g++ -Wall -o BSTtest2 BSTtest2.o
 
-BSTtest2.o: BSTtest2.cpp BinarySearchTreeDL.h dsexceptions.h
+BSTtest2.o: BSTtest2.cpp BinarySearchTree.h dsexceptions.h
 	g++ -Wall -o BSTtest2.o -c BSTtest2.cpp
 
 
@@ -21,7 +21,7 @@ BSTtest2.o: BSTtest2.cpp BinarySearchTreeDL.h dsexceptions.h
 BSTtestCL: BSTtestCL.o
 	g++ -Wall -o BSTtestCL BSTtestCL.o
 
-BSTtestCL.o: BSTtestCL.cpp BinarySearchTreeCL.h dsexceptions.h
+BSTtestCL.o: BSTtestCL.cpp BinarySearchTree.h dsexceptions.h
 	g++ -Wall -o BSTtestCL.o -c BSTtestCL.cpp
 
 
@@ -29,7 +29,7 @@ BSTtestCL.o: BSTtestCL.cpp BinarySearchTreeCL.h dsexceptions.h
 BSTtestCD: BSTtestCD.o
 	g++ -Wall -o BSTtestCD BSTtestCD.o
 
-BSTtestCD.o: BSTtestCD.cpp BinarySearchTreeCD.h dsexceptions.h
+BSTtestCD.o: BSTtestCD.cpp BinarySearchTree.h dsexceptions.h
 	g++ -Wall -o BSTtestCD.o -c BSTtestCD.cpp
 
 
@@ -37,7 +37,7 @@ BSTtestCD.o: BSTtestCD.cpp BinarySearchTreeCD.h dsexceptions.h
 BSTtestDD: BSTtestDD.o
 	g++ -Wall -o BSTtestDD BSTtestDD.o
 
-BSTtestDD.o: BSTtestDD.cpp BinarySearchTreeDD.h dsexceptions.h
+BSTtestDD.o: BSTtestDD.cpp BinarySearchTree.h dsexceptions.h
 	g++ -Wall -o BSTtestDD.o -c BSTtestDD.cpp
 
 
