@@ -33,14 +33,14 @@ class BinarySearchTree
     ///////////////////////////////////////////////////////////////////
     int ipl()
         {
-        int ipl = 0; 
+        int treeIPL = 0; 
 
         if(!isEmpty())          //if not empty
             {
-            ipl = computeIPL(root, 1);
+            treeIPL = computeIPL(root, 1);
             }
             
-        return numLeaves;
+        return treeIPL;
         }
 
 
@@ -231,13 +231,13 @@ class BinarySearchTree
             //Determine IPL on left sub-tree
             if(t->left != nullptr)
                 {
-                newIPL += ipl(t->left, myDepth + 1);
+                myIPL += computeIPL(t->left, myDepth + 1);
                 }
             
             //Determine IPL on right sub-tree
             if(t->right != nullptr)
                 {
-                newIPL += ipl(t->right, myDepth + 1);
+                myIPL += computeIPL(t->right, myDepth + 1);
                 }
    
             }

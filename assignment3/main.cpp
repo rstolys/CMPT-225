@@ -57,8 +57,8 @@ const int SEARCH =                  2;
 
 
 /***FUNCTION DECLARATIONS*****************************************************/
-double* obtainTreeInfo(BinarySearchTree<int> t_bst, AvlTree<int> t_avl, int sizeOfTrees);
-
+double* obtainBSTinfo(BinarySearchTree<int> t_bst, int sizeOfTrees);
+double* obtainAVLinfo(BinarySearchTree<int> t_bst, int sizeOfTrees);
 float computeTime(clock_t start, clock_t end);
 
 
@@ -156,7 +156,7 @@ int main(int argc, char **argv)
                     t_avl.insert(key);
                     timeElapsed = computeTime(start, clock());
 
-                    double* info = obtainAVLinfo(t_avl, sizeOfTrees);
+                    info = obtainAVLinfo(t_avl, sizeOfTrees);
 
                     //Report BST info
                     bstFile << REPORT_TO_FILE(opNum, info[SIZE], info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_INSERT) << endl;
@@ -198,7 +198,7 @@ int main(int argc, char **argv)
                     t_avl.remove(key);
                     timeElapsed = computeTime(start, clock());
 
-                    double* info = obtainAVLinfo(t_avl, sizeOfTrees);
+                    info = obtainAVLinfo(t_avl, sizeOfTrees);
 
                     //Report BST info
                     bstFile << REPORT_TO_FILE(opNum, info[SIZE], info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_REMOVE) << endl;
@@ -242,7 +242,7 @@ int main(int argc, char **argv)
                     bool resultAVL = t_avl.contains(key);
                     timeElapsed = computeTime(start, clock());
 
-                    double* info = obtainAVLinfo(t_avl, sizeOfTrees);
+                    info = obtainAVLinfo(t_avl, sizeOfTrees);
 
                     //Report BST info
                     bstFile << REPORT_TO_FILE(opNum, info[SIZE], info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_SEARCH) << endl;
@@ -287,7 +287,7 @@ int main(int argc, char **argv)
 ///////////////////////////////////////////////////////////////////
 double* obtainBSTinfo(BinarySearchTree<int> t_bst, int sizeOfTrees) 
     {
-    double info[3] = {0};       //Create info array to return and initalize to 0
+    double* info = new double[3];       //Create info array to return and initalize to 0
 
     //Set the size of the trees
     info[SIZE] = sizeOfTrees;
@@ -313,7 +313,7 @@ double* obtainBSTinfo(BinarySearchTree<int> t_bst, int sizeOfTrees)
 ///////////////////////////////////////////////////////////////////
 double* obtainAVLinfo(AvlTree<int> t_avl, int sizeOfTrees) 
     {
-    double info[3] = {0};       //Create info array to return and initalize to 0
+    double* info = new double[3];       //Create info array to return and initalize to 0
 
     //Set the size of the trees
     info[SIZE] = sizeOfTrees;
