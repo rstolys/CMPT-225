@@ -1,50 +1,13 @@
-all: BSTtest BSTtest2 BSTtestCL BSTtestCD  BSTtestDD
+all: main
 
 
 
-BSTtest: BSTtest.o
-	g++ -Wall -o BSTtest BSTtest.o  
+main: main.o
+	g++ -Wall -o main main.o  
 
-BSTtest.o: BSTtest.cpp BinarySearchTree.h dsexceptions.h
-	g++ -Wall -o BSTtest.o -c BSTtest.cpp 
-
-
-
-BSTtest2: BSTtest2.o
-	g++ -Wall -o BSTtest2 BSTtest2.o
-
-BSTtest2.o: BSTtest2.cpp BinarySearchTree.h dsexceptions.h
-	g++ -Wall -o BSTtest2.o -c BSTtest2.cpp
-
-
-
-BSTtestCL: BSTtestCL.o
-	g++ -Wall -o BSTtestCL BSTtestCL.o
-
-BSTtestCL.o: BSTtestCL.cpp BinarySearchTree.h dsexceptions.h
-	g++ -Wall -o BSTtestCL.o -c BSTtestCL.cpp
-
-
-
-BSTtestCD: BSTtestCD.o
-	g++ -Wall -o BSTtestCD BSTtestCD.o
-
-BSTtestCD.o: BSTtestCD.cpp BinarySearchTree.h dsexceptions.h
-	g++ -Wall -o BSTtestCD.o -c BSTtestCD.cpp
-
-
-
-BSTtestDD: BSTtestDD.o
-	g++ -Wall -o BSTtestDD BSTtestDD.o
-
-BSTtestDD.o: BSTtestDD.cpp BinarySearchTree.h dsexceptions.h
-	g++ -Wall -o BSTtestDD.o -c BSTtestDD.cpp
-
+main.o: main.cpp BinarySearchTree.h AvlTree.h dsexceptions.h
+	g++ -Wall -o main.o -c main.cpp 
 
 
 clean:
-	rm -f BSTtest *.o 
-	rm -f BSTtest2 *.o 
-	rm -f BSTtestCL *.o 
-	rm -f BSTtestCD *.o 
-	rm -f BSTtestDD *.o 
+	rm -f main *.o 
