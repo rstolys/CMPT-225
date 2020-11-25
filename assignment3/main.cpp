@@ -92,7 +92,7 @@ int main(int argc, char **argv)
     ofstream bstFile;
     ofstream avlFile;
 
-    operationsFile.open ("opperationsPerformed.txt");
+    operationsFile.open ("operationsPerformed.txt");
     bstFile.open ("bstResults.csv");
     avlFile.open ("avlResults.csv");
 
@@ -148,7 +148,7 @@ int main(int argc, char **argv)
                     double* info = obtainBSTinfo(t_bst, sizeOfTrees);
 
                     //Report BST info
-                    bstFile << REPORT_TO_FILE(opNum, info[SIZE], info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_INSERT) << endl;
+                    bstFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_INSERT) << endl;
 
 
                     //Insert the key into AVL tree -- measure and report information
@@ -159,11 +159,13 @@ int main(int argc, char **argv)
                     info = obtainAVLinfo(t_avl, sizeOfTrees);
 
                     //Report BST info
-                    bstFile << REPORT_TO_FILE(opNum, info[SIZE], info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_INSERT) << endl;
+                    avlFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_INSERT) << endl;
                     }
 
                 //Report operation 
                 operationsFile << REPORT_INSERT(opNum, key) << endl;
+
+                break;
                 }
             case REMOVE: 
                 {
@@ -190,7 +192,7 @@ int main(int argc, char **argv)
                     double* info = obtainBSTinfo(t_bst, sizeOfTrees);
 
                     //Report BST info
-                    bstFile << REPORT_TO_FILE(opNum, info[SIZE], info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_REMOVE) << endl;
+                    bstFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_REMOVE) << endl;
 
 
                     //Insert the key into AVL tree -- measure and report information
@@ -201,11 +203,13 @@ int main(int argc, char **argv)
                     info = obtainAVLinfo(t_avl, sizeOfTrees);
 
                     //Report BST info
-                    bstFile << REPORT_TO_FILE(opNum, info[SIZE], info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_REMOVE) << endl;
+                    avlFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_REMOVE) << endl;
                     }
 
                 //Report operation 
                 operationsFile << REPORT_REMOVE(opNum, keys[keyIndex]) << endl;
+
+                break;
                 }
             case SEARCH: 
                 {
@@ -234,7 +238,7 @@ int main(int argc, char **argv)
                     double* info = obtainBSTinfo(t_bst, sizeOfTrees);
 
                     //Report BST info
-                    bstFile << REPORT_TO_FILE(opNum, info[SIZE], info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_SEARCH) << endl;
+                    bstFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_SEARCH) << endl;
 
 
                     //Insert the key into AVL tree -- measure and report information
@@ -245,7 +249,7 @@ int main(int argc, char **argv)
                     info = obtainAVLinfo(t_avl, sizeOfTrees);
 
                     //Report BST info
-                    bstFile << REPORT_TO_FILE(opNum, info[SIZE], info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_SEARCH) << endl;
+                    avlFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_SEARCH) << endl;
 
 
                     reportResult = (resultBST == resultAVL) ? resultAVL : false;
@@ -254,6 +258,8 @@ int main(int argc, char **argv)
 
                 //Report operation 
                 operationsFile << REPORT_SEARCH(opNum, key, reportResult) << endl;
+
+                break;
                 }
             default: 
                 {
@@ -261,6 +267,8 @@ int main(int argc, char **argv)
 
                 //Report error
                 operationsFile << to_string(opNum) + ": ERROR: No Operation performed" << endl;
+
+                break;
                 }
             }
         }
