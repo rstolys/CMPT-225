@@ -1,0 +1,1000 @@
+0: remove: 45
+1: insert: 15
+2: search: 35, result: 0
+3: remove: 65
+4: insert: 21
+5: search: 27, result: 0
+6: search: 59, result: 0
+7: search: 26, result: 0
+8: insert: 26
+9: remove: 45
+10: search: 68, result: 0
+11: insert: 29
+12: search: 30, result: 0
+13: search: 23, result: 0
+14: remove: 25
+15: search: 2, result: 0
+16: insert: 58
+17: search: 67, result: 0
+18: remove: 45
+19: remove: 65
+20: insert: 73
+21: insert: 19
+22: search: 37, result: 0
+23: search: 24, result: 0
+24: search: 70, result: 0
+25: search: 26, result: 1
+26: remove: 25
+27: search: 73, result: 1
+28: search: 70, result: 0
+29: remove: 45
+30: insert: 25
+31: search: 27, result: 0
+32: search: 5, result: 0
+33: remove: 5
+34: remove: 65
+35: insert: 95
+36: insert: 45
+37: search: 67, result: 0
+38: search: 64, result: 0
+39: insert: 50
+40: remove: 85
+41: insert: 78
+42: search: 84, result: 0
+43: insert: 51
+44: search: 99, result: 0
+45: insert: 60
+46: search: 68, result: 0
+47: remove: 65
+48: remove: 45
+49: insert: 39
+50: insert: 70
+51: search: 78, result: 1
+52: search: 1, result: 0
+53: search: 2, result: 0
+54: insert: 92
+55: remove: 45
+56: remove: 25
+57: search: 41, result: 0
+58: insert: 89
+59: remove: 5
+60: remove: 5
+61: insert: 17
+62: insert: 71
+63: insert: 75
+64: insert: 27
+65: insert: 56
+66: search: 53, result: 0
+67: insert: 65
+68: remove: 85
+69: search: 24, result: 0
+70: remove: 45
+71: search: 29, result: 1
+72: insert: 19
+73: insert: 68
+74: remove: 25
+75: remove: 5
+76: insert: 23
+77: search: 45, result: 0
+78: search: 51, result: 1
+79: remove: 25
+80: search: 88, result: 0
+81: search: 28, result: 0
+82: remove: 25
+83: remove: 25
+84: search: 64, result: 0
+85: insert: 14
+86: search: 56, result: 1
+87: insert: 91
+88: search: 65, result: 1
+89: insert: 36
+90: remove: 45
+91: search: 28, result: 0
+92: search: 7, result: 0
+93: insert: 21
+94: search: 95, result: 1
+95: search: 37, result: 0
+96: insert: 93
+97: search: 28, result: 0
+98: insert: 11
+99: insert: 29
+100: search: 4, result: 0
+101: remove: 85
+102: search: 38, result: 0
+103: search: 40, result: 0
+104: remove: 85
+105: insert: 88
+106: insert: 17
+107: search: 96, result: 0
+108: search: 43, result: 0
+109: insert: 83
+110: search: 99, result: 0
+111: remove: 25
+112: remove: 25
+113: search: 39, result: 1
+114: search: 86, result: 0
+115: insert: 82
+116: insert: 64
+117: remove: 65
+118: insert: 4
+119: search: 11, result: 1
+120: search: 28, result: 0
+121: search: 43, result: 0
+122: remove: 85
+123: remove: 65
+124: search: 10, result: 0
+125: insert: 1
+126: remove: 25
+127: remove: 25
+128: insert: 36
+129: remove: 45
+130: insert: 65
+131: search: 16, result: 0
+132: insert: 58
+133: search: 37, result: 0
+134: insert: 24
+135: insert: 36
+136: search: 99, result: 0
+137: insert: 50
+138: search: 71, result: 1
+139: insert: 31
+140: insert: 30
+141: remove: 5
+142: remove: 85
+143: remove: 45
+144: search: 96, result: 0
+145: insert: 73
+146: remove: 85
+147: search: 95, result: 1
+148: search: 66, result: 0
+149: search: 40, result: 0
+150: remove: 5
+151: insert: 42
+152: insert: 7
+153: insert: 56
+154: remove: 85
+155: search: 12, result: 0
+156: remove: 65
+157: insert: 9
+158: search: 10, result: 0
+159: insert: 87
+160: insert: 1
+161: remove: 65
+162: remove: 25
+163: search: 99, result: 0
+164: insert: 4
+165: remove: 45
+166: search: 67, result: 0
+167: search: 28, result: 0
+168: search: 50, result: 1
+169: insert: 58
+170: insert: 24
+171: remove: 5
+172: search: 81, result: 0
+173: insert: 84
+174: remove: 65
+175: search: 50, result: 1
+176: remove: 25
+177: search: 99, result: 0
+178: remove: 65
+179: search: 13, result: 0
+180: search: 90, result: 0
+181: insert: 90
+182: search: 81, result: 0
+183: insert: 36
+184: insert: 55
+185: search: 4, result: 1
+186: search: 69, result: 0
+187: insert: 76
+188: insert: 55
+189: remove: 65
+190: search: 84, result: 1
+191: remove: 25
+192: search: 67, result: 0
+193: search: 13, result: 0
+194: remove: 5
+195: insert: 59
+196: remove: 65
+197: remove: 45
+198: search: 21, result: 1
+199: insert: 68
+200: insert: 89
+201: remove: 85
+202: insert: 98
+203: insert: 8
+204: remove: 85
+205: insert: 33
+206: remove: 85
+207: insert: 54
+208: remove: 45
+209: search: 29, result: 1
+210: search: 46, result: 0
+211: insert: 97
+212: search: 90, result: 1
+213: remove: 85
+214: insert: 97
+215: search: 92, result: 1
+216: insert: 25
+217: search: 96, result: 0
+218: remove: 85
+219: insert: 29
+220: remove: 25
+221: search: 21, result: 1
+222: insert: 4
+223: search: 27, result: 1
+224: search: 48, result: 0
+225: remove: 65
+226: search: 97, result: 1
+227: remove: 85
+228: search: 2, result: 0
+229: insert: 3
+230: search: 81, result: 0
+231: search: 38, result: 0
+232: remove: 45
+233: search: 34, result: 0
+234: remove: 65
+235: insert: 27
+236: insert: 29
+237: remove: 5
+238: search: 29, result: 1
+239: search: 35, result: 0
+240: insert: 0
+241: remove: 45
+242: search: 89, result: 1
+243: search: 88, result: 1
+244: insert: 95
+245: search: 44, result: 0
+246: insert: 90
+247: insert: 40
+248: insert: 69
+249: search: 32, result: 0
+250: search: 42, result: 1
+251: insert: 17
+252: insert: 61
+253: insert: 9
+254: insert: 25
+255: search: 67, result: 0
+256: search: 34, result: 0
+257: insert: 26
+258: remove: 65
+259: search: 68, result: 1
+260: insert: 58
+261: search: 86, result: 0
+262: remove: 45
+263: insert: 94
+264: remove: 65
+265: insert: 29
+266: insert: 90
+267: search: 70, result: 1
+268: insert: 80
+269: search: 93, result: 1
+270: remove: 65
+271: search: 86, result: 0
+272: insert: 55
+273: search: 90, result: 1
+274: insert: 79
+275: search: 69, result: 1
+276: insert: 74
+277: search: 41, result: 0
+278: search: 33, result: 1
+279: insert: 88
+280: remove: 45
+281: remove: 5
+282: search: 17, result: 1
+283: insert: 60
+284: remove: 65
+285: insert: 59
+286: search: 18, result: 0
+287: search: 83, result: 1
+288: remove: 85
+289: search: 37, result: 0
+290: insert: 83
+291: remove: 85
+292: insert: 14
+293: insert: 29
+294: insert: 59
+295: search: 38, result: 0
+296: search: 88, result: 1
+297: insert: 33
+298: remove: 45
+299: insert: 58
+300: remove: 5
+301: remove: 5
+302: search: 63, result: 0
+303: remove: 5
+304: remove: 65
+305: insert: 62
+306: insert: 90
+307: search: 91, result: 1
+308: search: 15, result: 1
+309: search: 57, result: 0
+310: remove: 45
+311: remove: 45
+312: insert: 21
+313: search: 40, result: 1
+314: insert: 30
+315: search: 25, result: 1
+316: remove: 45
+317: remove: 65
+318: insert: 39
+319: search: 4, result: 1
+320: search: 80, result: 1
+321: insert: 21
+322: insert: 62
+323: remove: 5
+324: insert: 85
+325: search: 4, result: 1
+326: insert: 83
+327: search: 59, result: 1
+328: insert: 44
+329: insert: 11
+330: search: 50, result: 1
+331: search: 60, result: 1
+332: insert: 5
+333: insert: 49
+334: search: 11, result: 1
+335: search: 34, result: 0
+336: remove: 25
+337: search: 14, result: 1
+338: remove: 85
+339: insert: 18
+340: insert: 82
+341: search: 82, result: 1
+342: search: 30, result: 1
+343: insert: 74
+344: remove: 85
+345: insert: 53
+346: search: 74, result: 1
+347: search: 13, result: 0
+348: search: 77, result: 0
+349: insert: 75
+350: search: 19, result: 1
+351: search: 32, result: 0
+352: insert: 17
+353: search: 35, result: 0
+354: remove: 45
+355: remove: 85
+356: remove: 85
+357: insert: 91
+358: search: 18, result: 1
+359: remove: 45
+360: search: 55, result: 1
+361: remove: 85
+362: insert: 4
+363: search: 61, result: 1
+364: insert: 85
+365: remove: 85
+366: insert: 51
+367: search: 50, result: 1
+368: insert: 3
+369: insert: 6
+370: insert: 39
+371: remove: 25
+372: remove: 45
+373: remove: 65
+374: insert: 81
+375: remove: 25
+376: search: 55, result: 1
+377: insert: 18
+378: insert: 42
+379: search: 96, result: 0
+380: remove: 45
+381: search: 84, result: 1
+382: remove: 65
+383: insert: 40
+384: insert: 72
+385: remove: 25
+386: search: 47, result: 0
+387: insert: 30
+388: remove: 5
+389: remove: 65
+390: insert: 24
+391: insert: 35
+392: insert: 4
+393: remove: 85
+394: search: 86, result: 0
+395: search: 78, result: 1
+396: remove: 65
+397: insert: 83
+398: search: 48, result: 0
+399: remove: 5
+400: remove: 65
+401: insert: 35
+402: insert: 57
+403: insert: 47
+404: remove: 45
+405: insert: 18
+406: search: 3, result: 1
+407: remove: 85
+408: search: 59, result: 1
+409: insert: 6
+410: remove: 25
+411: insert: 8
+412: insert: 98
+413: insert: 76
+414: insert: 15
+415: insert: 71
+416: insert: 59
+417: search: 10, result: 0
+418: remove: 5
+419: remove: 5
+420: insert: 78
+421: search: 53, result: 1
+422: search: 14, result: 1
+423: insert: 89
+424: insert: 67
+425: search: 23, result: 1
+426: remove: 45
+427: search: 22, result: 0
+428: remove: 25
+429: insert: 79
+430: search: 54, result: 1
+431: insert: 31
+432: insert: 57
+433: search: 81, result: 1
+434: remove: 85
+435: search: 33, result: 1
+436: search: 81, result: 1
+437: insert: 15
+438: remove: 25
+439: remove: 65
+440: remove: 45
+441: insert: 32
+442: insert: 81
+443: remove: 25
+444: remove: 85
+445: insert: 99
+446: insert: 97
+447: insert: 76
+448: remove: 65
+449: remove: 65
+450: insert: 82
+451: insert: 66
+452: remove: 25
+453: insert: 11
+454: remove: 45
+455: search: 30, result: 1
+456: insert: 83
+457: insert: 76
+458: remove: 25
+459: insert: 25
+460: insert: 39
+461: search: 90, result: 1
+462: search: 60, result: 1
+463: search: 43, result: 0
+464: search: 28, result: 0
+465: insert: 21
+466: insert: 55
+467: remove: 25
+468: search: 70, result: 1
+469: insert: 53
+470: insert: 22
+471: insert: 50
+472: insert: 97
+473: insert: 26
+474: search: 71, result: 1
+475: insert: 49
+476: search: 28, result: 0
+477: insert: 98
+478: insert: 10
+479: search: 77, result: 0
+480: insert: 76
+481: remove: 65
+482: remove: 65
+483: insert: 99
+484: insert: 66
+485: remove: 65
+486: search: 35, result: 1
+487: insert: 98
+488: search: 95, result: 1
+489: insert: 5
+490: remove: 85
+491: search: 28, result: 0
+492: search: 93, result: 1
+493: remove: 65
+494: remove: 65
+495: insert: 45
+496: search: 25, result: 0
+497: search: 83, result: 1
+498: remove: 65
+499: insert: 21
+500: search: 34, result: 0
+501: remove: 5
+502: insert: 59
+503: search: 57, result: 1
+504: search: 61, result: 1
+505: search: 72, result: 1
+506: remove: 45
+507: insert: 50
+508: search: 82, result: 1
+509: search: 17, result: 1
+510: insert: 73
+511: insert: 6
+512: insert: 64
+513: search: 63, result: 0
+514: remove: 65
+515: search: 37, result: 0
+516: search: 28, result: 0
+517: insert: 80
+518: insert: 56
+519: remove: 45
+520: insert: 52
+521: remove: 45
+522: search: 17, result: 1
+523: search: 83, result: 1
+524: remove: 65
+525: search: 6, result: 1
+526: insert: 67
+527: insert: 89
+528: remove: 5
+529: search: 75, result: 1
+530: insert: 41
+531: search: 38, result: 0
+532: search: 36, result: 1
+533: search: 56, result: 1
+534: remove: 25
+535: search: 14, result: 1
+536: search: 14, result: 1
+537: insert: 86
+538: search: 39, result: 1
+539: remove: 25
+540: insert: 21
+541: remove: 25
+542: search: 9, result: 1
+543: remove: 85
+544: search: 35, result: 1
+545: remove: 25
+546: search: 13, result: 0
+547: search: 98, result: 1
+548: insert: 55
+549: search: 93, result: 1
+550: remove: 45
+551: remove: 85
+552: remove: 45
+553: insert: 58
+554: search: 40, result: 1
+555: insert: 81
+556: search: 90, result: 1
+557: remove: 25
+558: search: 54, result: 1
+559: insert: 64
+560: remove: 5
+561: remove: 5
+562: search: 44, result: 1
+563: insert: 38
+564: remove: 45
+565: remove: 5
+566: insert: 43
+567: insert: 56
+568: remove: 25
+569: insert: 11
+570: search: 12, result: 0
+571: search: 29, result: 1
+572: insert: 68
+573: remove: 65
+574: search: 7, result: 1
+575: remove: 45
+576: search: 77, result: 0
+577: remove: 65
+578: remove: 65
+579: remove: 25
+580: search: 97, result: 1
+581: insert: 18
+582: insert: 53
+583: search: 74, result: 1
+584: insert: 93
+585: remove: 85
+586: remove: 25
+587: insert: 59
+588: remove: 25
+589: search: 24, result: 1
+590: remove: 25
+591: search: 2, result: 0
+592: remove: 25
+593: search: 83, result: 1
+594: remove: 25
+595: search: 23, result: 1
+596: search: 57, result: 1
+597: search: 31, result: 1
+598: insert: 20
+599: search: 90, result: 1
+600: search: 91, result: 1
+601: insert: 70
+602: insert: 67
+603: insert: 71
+604: insert: 43
+605: insert: 99
+606: remove: 85
+607: insert: 86
+608: search: 32, result: 1
+609: search: 10, result: 1
+610: search: 30, result: 1
+611: search: 63, result: 0
+612: remove: 5
+613: search: 49, result: 1
+614: search: 51, result: 1
+615: search: 64, result: 1
+616: insert: 30
+617: remove: 25
+618: search: 15, result: 1
+619: insert: 81
+620: insert: 34
+621: insert: 87
+622: search: 87, result: 1
+623: search: 43, result: 1
+624: insert: 42
+625: remove: 5
+626: search: 39, result: 1
+627: insert: 63
+628: remove: 85
+629: insert: 69
+630: search: 4, result: 1
+631: insert: 99
+632: search: 19, result: 1
+633: search: 35, result: 1
+634: remove: 85
+635: remove: 25
+636: search: 2, result: 0
+637: remove: 65
+638: remove: 25
+639: search: 60, result: 1
+640: search: 11, result: 1
+641: remove: 5
+642: remove: 45
+643: insert: 21
+644: search: 5, result: 0
+645: search: 79, result: 1
+646: insert: 28
+647: search: 47, result: 1
+648: insert: 45
+649: search: 87, result: 1
+650: insert: 51
+651: remove: 45
+652: remove: 45
+653: search: 94, result: 1
+654: search: 6, result: 1
+655: remove: 65
+656: remove: 5
+657: remove: 25
+658: insert: 66
+659: insert: 54
+660: search: 37, result: 0
+661: search: 84, result: 1
+662: insert: 12
+663: search: 17, result: 1
+664: search: 65, result: 0
+665: search: 8, result: 1
+666: remove: 25
+667: search: 22, result: 1
+668: search: 95, result: 1
+669: remove: 5
+670: search: 76, result: 1
+671: search: 71, result: 1
+672: remove: 25
+673: search: 72, result: 1
+674: remove: 5
+675: insert: 66
+676: insert: 12
+677: insert: 96
+678: search: 33, result: 1
+679: remove: 45
+680: insert: 70
+681: search: 68, result: 1
+682: remove: 45
+683: remove: 5
+684: search: 63, result: 1
+685: remove: 25
+686: search: 2, result: 0
+687: search: 31, result: 1
+688: insert: 57
+689: remove: 45
+690: search: 83, result: 1
+691: remove: 25
+692: search: 40, result: 1
+693: remove: 65
+694: remove: 5
+695: insert: 25
+696: remove: 65
+697: insert: 72
+698: insert: 39
+699: search: 83, result: 1
+700: insert: 61
+701: search: 42, result: 1
+702: remove: 5
+703: remove: 5
+704: remove: 25
+705: remove: 5
+706: search: 57, result: 1
+707: remove: 25
+708: remove: 65
+709: search: 76, result: 1
+710: remove: 25
+711: remove: 25
+712: insert: 98
+713: search: 41, result: 1
+714: insert: 70
+715: insert: 40
+716: search: 1, result: 1
+717: insert: 0
+718: search: 9, result: 1
+719: search: 40, result: 1
+720: search: 63, result: 1
+721: insert: 4
+722: search: 6, result: 1
+723: remove: 85
+724: remove: 5
+725: insert: 30
+726: remove: 5
+727: remove: 45
+728: search: 25, result: 0
+729: insert: 91
+730: search: 7, result: 1
+731: search: 31, result: 1
+732: search: 19, result: 1
+733: remove: 85
+734: search: 27, result: 1
+735: insert: 19
+736: search: 81, result: 1
+737: remove: 85
+738: insert: 39
+739: insert: 38
+740: search: 94, result: 1
+741: remove: 25
+742: remove: 45
+743: search: 52, result: 1
+744: insert: 98
+745: search: 10, result: 1
+746: remove: 5
+747: remove: 45
+748: remove: 25
+749: insert: 78
+750: remove: 45
+751: insert: 48
+752: remove: 65
+753: insert: 86
+754: insert: 59
+755: search: 0, result: 1
+756: insert: 97
+757: search: 3, result: 1
+758: remove: 45
+759: remove: 85
+760: search: 54, result: 1
+761: search: 6, result: 1
+762: insert: 3
+763: insert: 84
+764: insert: 97
+765: remove: 85
+766: remove: 25
+767: insert: 14
+768: search: 97, result: 1
+769: search: 97, result: 1
+770: remove: 5
+771: search: 13, result: 0
+772: remove: 5
+773: remove: 5
+774: search: 75, result: 1
+775: search: 86, result: 1
+776: search: 26, result: 1
+777: insert: 16
+778: remove: 5
+779: insert: 9
+780: remove: 25
+781: insert: 33
+782: remove: 45
+783: insert: 13
+784: search: 0, result: 1
+785: insert: 86
+786: insert: 63
+787: remove: 85
+788: insert: 16
+789: search: 82, result: 1
+790: remove: 25
+791: search: 26, result: 1
+792: insert: 65
+793: search: 99, result: 1
+794: search: 46, result: 0
+795: remove: 85
+796: remove: 85
+797: search: 42, result: 1
+798: insert: 34
+799: remove: 25
+800: remove: 5
+801: remove: 25
+802: search: 96, result: 1
+803: remove: 65
+804: insert: 51
+805: insert: 61
+806: insert: 37
+807: insert: 61
+808: remove: 45
+809: search: 88, result: 1
+810: search: 20, result: 1
+811: insert: 93
+812: insert: 28
+813: remove: 85
+814: insert: 42
+815: search: 96, result: 1
+816: remove: 45
+817: insert: 0
+818: remove: 65
+819: insert: 32
+820: remove: 25
+821: remove: 85
+822: remove: 25
+823: remove: 85
+824: remove: 5
+825: search: 44, result: 1
+826: search: 23, result: 1
+827: insert: 51
+828: search: 73, result: 1
+829: search: 65, result: 0
+830: search: 81, result: 1
+831: search: 83, result: 1
+832: search: 77, result: 0
+833: remove: 5
+834: insert: 69
+835: search: 7, result: 1
+836: insert: 91
+837: remove: 45
+838: insert: 87
+839: insert: 36
+840: search: 39, result: 1
+841: insert: 20
+842: search: 71, result: 1
+843: search: 18, result: 1
+844: insert: 34
+845: insert: 64
+846: remove: 65
+847: search: 67, result: 1
+848: remove: 25
+849: search: 90, result: 1
+850: insert: 32
+851: insert: 29
+852: remove: 25
+853: search: 47, result: 1
+854: remove: 5
+855: remove: 65
+856: search: 68, result: 1
+857: insert: 55
+858: insert: 66
+859: insert: 36
+860: remove: 25
+861: remove: 25
+862: remove: 5
+863: insert: 83
+864: search: 21, result: 1
+865: remove: 65
+866: remove: 65
+867: insert: 28
+868: search: 70, result: 1
+869: search: 98, result: 1
+870: search: 63, result: 1
+871: remove: 25
+872: remove: 45
+873: remove: 85
+874: search: 92, result: 1
+875: remove: 25
+876: insert: 63
+877: remove: 65
+878: remove: 25
+879: remove: 25
+880: search: 76, result: 1
+881: remove: 85
+882: search: 87, result: 1
+883: remove: 85
+884: insert: 81
+885: insert: 29
+886: search: 44, result: 1
+887: insert: 80
+888: remove: 5
+889: remove: 65
+890: remove: 45
+891: insert: 59
+892: search: 42, result: 1
+893: search: 1, result: 1
+894: insert: 71
+895: insert: 58
+896: remove: 65
+897: search: 55, result: 1
+898: insert: 90
+899: search: 71, result: 1
+900: search: 3, result: 1
+901: search: 20, result: 1
+902: search: 42, result: 1
+903: remove: 65
+904: search: 7, result: 1
+905: search: 58, result: 1
+906: search: 94, result: 1
+907: search: 58, result: 1
+908: remove: 25
+909: remove: 45
+910: insert: 73
+911: remove: 25
+912: remove: 45
+913: remove: 5
+914: search: 0, result: 1
+915: remove: 45
+916: insert: 33
+917: remove: 45
+918: remove: 25
+919: insert: 31
+920: search: 28, result: 1
+921: remove: 45
+922: remove: 85
+923: search: 10, result: 1
+924: insert: 65
+925: insert: 67
+926: search: 26, result: 1
+927: insert: 38
+928: search: 5, result: 0
+929: insert: 62
+930: remove: 65
+931: search: 61, result: 1
+932: insert: 7
+933: search: 97, result: 1
+934: remove: 85
+935: insert: 39
+936: remove: 25
+937: insert: 92
+938: insert: 42
+939: search: 33, result: 1
+940: insert: 43
+941: search: 50, result: 1
+942: remove: 25
+943: remove: 25
+944: remove: 25
+945: search: 47, result: 1
+946: search: 83, result: 1
+947: search: 94, result: 1
+948: remove: 25
+949: insert: 63
+950: search: 20, result: 1
+951: search: 38, result: 1
+952: remove: 65
+953: search: 22, result: 1
+954: remove: 25
+955: remove: 5
+956: search: 8, result: 1
+957: remove: 65
+958: search: 84, result: 1
+959: remove: 65
+960: insert: 57
+961: remove: 65
+962: remove: 85
+963: insert: 86
+964: insert: 40
+965: insert: 51
+966: remove: 45
+967: insert: 54
+968: search: 72, result: 1
+969: remove: 65
+970: insert: 88
+971: insert: 37
+972: remove: 25
+973: insert: 94
+974: search: 14, result: 1
+975: insert: 82
+976: search: 69, result: 1
+977: remove: 25
+978: insert: 84
+979: remove: 5
+980: remove: 5
+981: remove: 45
+982: insert: 92
+983: search: 58, result: 1
+984: remove: 85
+985: insert: 21
+986: search: 69, result: 1
+987: remove: 25
+988: insert: 2
+989: insert: 47
+990: insert: 89
+991: remove: 5
+992: insert: 17
+993: insert: 75
+994: remove: 45
+995: remove: 85
+996: remove: 65
+997: remove: 45
+998: remove: 45
+999: remove: 85

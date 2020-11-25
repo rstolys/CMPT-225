@@ -30,7 +30,7 @@ const int SIZE =                    0;
 const int HEIGHT =                  1;
 const int AVG_NODE_DEPTH =          2;
 
-const int MAX_OPERATIONS =          100;
+const int MAX_OPERATIONS =          1000;
 const int OPERATIONS_BN_TEST =      5; 
 const int TESTS_PER_REPORT =        MAX_OPERATIONS / OPERATIONS_BN_TEST;
 
