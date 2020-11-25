@@ -58,7 +58,7 @@ const int SEARCH =                  2;
 
 /***FUNCTION DECLARATIONS*****************************************************/
 double* obtainBSTinfo(BinarySearchTree<int> t_bst, int sizeOfTrees);
-double* obtainAVLinfo(BinarySearchTree<int> t_bst, int sizeOfTrees);
+double* obtainAVLinfo(AvlTree<int> t_bst, int sizeOfTrees);
 float computeTime(clock_t start, clock_t end);
 
 
