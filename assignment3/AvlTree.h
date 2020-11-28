@@ -56,7 +56,7 @@ class AvlTree
 
         if(!isEmpty())          //if not empty
             {
-            height = root->height;
+            height = computeHeight(root);
             }
             
         return height;
@@ -230,6 +230,48 @@ class AvlTree
             }
             
         return myIPL;
+        }
+
+    
+    ///////////////////////////////////////////////////////////////////
+    /// **private** computeHeight -- will compute the height of the tree
+    ///
+    /// @param[int]   t            pointer to binary tree node
+    /// @param[out]   int          height of the tree
+    ///
+    ///////////////////////////////////////////////////////////////////
+    int computeHeight(AvlNode* t)
+        { 
+        int treeHeight = 0;
+
+        if(t != nullptr)
+            {
+            //If this is not a leaf
+            if(t->left != nullptr || t->right != nullptr)
+                {
+                //If both branches exist
+                if(t->left != nullptr && t->right != nullptr)
+                    {
+                    int leftHeight = computeHeight(t->left);
+                    int rightHeight = computeHeight(t->right);
+                    treeHeight = 1 + (leftHeight > rightHeight) ? leftHeight : rightHeight;
+                    }
+                else if(t->left != nullptr)         //If only the left branch exists
+                    {
+                    treeHeight = 1 + computeHeight(t->left);
+                    }
+                else if(t->right != nullptr)        //If only the left branch exists
+                    {
+                    treeHeight = 1 + computeHeight(t->right);
+                    }
+                }
+            else 
+                {
+                treeHeight = 0;             //Height of leaf is 0
+                }
+            }
+            
+        return treeHeight;
         }
 
 

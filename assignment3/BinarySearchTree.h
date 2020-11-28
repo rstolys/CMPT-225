@@ -246,8 +246,9 @@ class BinarySearchTree
         }
 
     ///////////////////////////////////////////////////////////////////
-    /// getHeight -- will compute the height of the tree
+    /// **private** computeHeight -- will compute the height of the tree
     ///
+    /// @param[int]   t            pointer to binary tree node
     /// @param[out]   int          height of the tree
     ///
     ///////////////////////////////////////////////////////////////////
@@ -257,27 +258,24 @@ class BinarySearchTree
 
         if(t != nullptr)
             {
-            int leftHeight = 0; 
-            int rightHeight = 0; 
-
             //If this is not a leaf
             if(t->left != nullptr || t->right != nullptr)
                 {
-                //Determine height of the left sub-tree
-                if(t->left != nullptr)
+                //If both branches exist
+                if(t->left != nullptr && t->right != nullptr)
                     {
-                    leftHeight = computeHeight(t->left);
+                    int leftHeight = computeHeight(t->left);
+                    int rightHeight = computeHeight(t->right);
+                    treeHeight = 1 + (leftHeight > rightHeight) ? leftHeight : rightHeight;
                     }
-                
-                //Determine height of the right sub-tree
-                if(t->right != nullptr)
+                else if(t->left != nullptr)         //If only the left branch exists
                     {
-                    rightHeight = computeHeight(t->right);
+                    treeHeight = 1 + computeHeight(t->left);
                     }
-
-                //Set the tree height
-                treeHeight = (leftHeight > rightHeight) ? leftHeight : rightHeight;
-                treeHeight++;           //Need to incremenent for current node
+                else if(t->right != nullptr)        //If only the left branch exists
+                    {
+                    treeHeight = 1 + computeHeight(t->right);
+                    }
                 }
             else 
                 {
