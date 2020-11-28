@@ -9,6 +9,7 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
+#include <random>
 #include <time.h>
 #include <math.h>
 #include <string>
@@ -103,144 +104,137 @@ int main(int argc, char **argv)
     //Generate a set of keys and insert into the trees 
     for(int i = 0; i < NUM_KEYS; i++)
         {
-        key = (key + KEY_GAP) % MAX_KEY;            //Get a key
-
-       if(t_avl.contains(key))
+        //Make sure the key is not in the tree already before inserting it
+        do 
             {
-            i--;        //We need to get another key and try again
+            key = (key + KEY_GAP) % MAX_KEY;        //Get a key
             }
-        else 
-            {
-            t_bst.insert(key);                      //Insert into bst
-            t_avl.insert(key);                      //Insert into avl
+        while(t_avl.contains(key));
+        
+        t_bst.insert(key);                      //Insert into bst
+        t_avl.insert(key);                      //Insert into avl
 
-            sizeOfTrees++;
-
-            //Report inital inserts to file
-            //operationsFile << REPORT_INSERT(-1, key) << endl;
-            }
+        sizeOfTrees++;
         }
 
     //Report intial inserts to file 
     operationsFile << "-1: inserted: " << sizeOfTrees << " keys into trees" << endl;
 
-    //Initalize random number generator
-    srand(1);                   //Using default seed to get the same sequence each time
-
+    //Initalize random number generators for getting keys and for selecting operations
+    default_random_engine generate;
+    uniform_int_distribution<int> distribution(0, MAX_KEY);
+    srand(1);                       //Use fixed key to get same sequence of operations
 
     //Performs a long sequence of operations on the two trees 
     for(int opNum = 0; opNum < MAX_OPERATIONS; opNum++) 
         {
         int operationType = rand() % 3;     //Get the operation to be performed
+        int key;
 
         switch(operationType)
             {
             case INSERT: 
                 {
-                //Get the key to insert 
-                int key = rand() % MAX_KEY;
-
-                if(t_avl.contains(key))
+                //Make sure the ket isnt already in the tree
+                do 
                     {
-                    opNum--;            //We can't insert a key that is already here so we will try operation again
+                    key = distribution(generate);         //Get the key to insert 
+                    }
+                while (t_avl.contains(key));
+                
+
+                if(opNum % OPERATIONS_BN_TEST)
+                    {
+                    sizeOfTrees++;
+
+                    //Insert the key into both trees -- don't need to measure speed or get info
+                    t_bst.insert(key);
+                    t_avl.insert(key);
                     }
                 else 
                     {
-                    if(opNum % OPERATIONS_BN_TEST)
-                        {
-                        sizeOfTrees++;
+                    sizeOfTrees++;
 
-                        //Insert the key into both trees -- don't need to measure speed or get info
-                        t_bst.insert(key);
-                        t_avl.insert(key);
-                        }
-                    else 
-                        {
-                        sizeOfTrees++;
+                    //Insert the key into BST tree -- measure and report information
+                    start = clock();
+                    t_bst.insert(key);
+                    timeElapsed = computeTime(start, clock());
 
-                        //Insert the key into BST tree -- measure and report information
-                        start = clock();
-                        t_bst.insert(key);
-                        timeElapsed = computeTime(start, clock());
+                    double* info = obtainBSTinfo(t_bst, sizeOfTrees);
 
-                        double* info = obtainBSTinfo(t_bst, sizeOfTrees);
-
-                        //Report BST info
-                        bstFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_INSERT) << endl;
+                    //Report BST info
+                    bstFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_INSERT) << endl;
 
 
-                        //Insert the key into AVL tree -- measure and report information
-                        start = clock();
-                        t_avl.insert(key);
-                        timeElapsed = computeTime(start, clock());
+                    //Insert the key into AVL tree -- measure and report information
+                    start = clock();
+                    t_avl.insert(key);
+                    timeElapsed = computeTime(start, clock());
 
-                        info = obtainAVLinfo(t_avl, sizeOfTrees);
+                    info = obtainAVLinfo(t_avl, sizeOfTrees);
 
-                        //Report BST info
-                        avlFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_INSERT) << endl;
-                        }
-
-                    //Report operation 
-                    operationsFile << REPORT_INSERT(opNum, key) << endl;
+                    //Report BST info
+                    avlFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_INSERT) << endl;
                     }
+
+                //Report operation 
+                operationsFile << REPORT_INSERT(opNum, key) << endl;
+
                 break;
                 }
             case REMOVE: 
                 {
-                //Get the key index to remove 
-                int key = rand() % MAX_KEY;
-
-                //If trees do not contain the key
-                if(!t_avl.contains(key))
+                //Make sure the key is already in the tree
+                do 
                     {
-                    opNum--;            //We can't remove a key that is already here so we will try operation again
+                    key = distribution(generate);         //Get the key to insert 
+                    }
+                while (!t_avl.contains(key));
+
+
+                if(opNum % OPERATIONS_BN_TEST)
+                    {
+                    sizeOfTrees--;
+
+                    //Insert the key into both trees
+                    t_bst.remove(key);
+                    t_avl.remove(key);
                     }
                 else 
                     {
-                    if(opNum % OPERATIONS_BN_TEST)
-                        {
-                        sizeOfTrees--;
+                    sizeOfTrees--;
 
-                        //Insert the key into both trees
-                        t_bst.remove(key);
-                        t_avl.remove(key);
-                        }
-                    else 
-                        {
-                        sizeOfTrees--;
+                    //Insert the key into BST tree -- measure and report information
+                    start = clock();
+                    t_bst.remove(key);
+                    timeElapsed = computeTime(start, clock());
 
-                        //Insert the key into BST tree -- measure and report information
-                        start = clock();
-                        t_bst.remove(key);
-                        timeElapsed = computeTime(start, clock());
+                    double* info = obtainBSTinfo(t_bst, sizeOfTrees);
 
-                        double* info = obtainBSTinfo(t_bst, sizeOfTrees);
-
-                        //Report BST info
-                        bstFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_REMOVE) << endl;
+                    //Report BST info
+                    bstFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_REMOVE) << endl;
 
 
-                        //Insert the key into AVL tree -- measure and report information
-                        start = clock();
-                        t_avl.remove(key);
-                        timeElapsed = computeTime(start, clock());
+                    //Insert the key into AVL tree -- measure and report information
+                    start = clock();
+                    t_avl.remove(key);
+                    timeElapsed = computeTime(start, clock());
 
-                        info = obtainAVLinfo(t_avl, sizeOfTrees);
+                    info = obtainAVLinfo(t_avl, sizeOfTrees);
 
-                        //Report BST info
-                        avlFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_REMOVE) << endl;
-                        }
-
-                    //Report operation 
-                    operationsFile << REPORT_REMOVE(opNum, key) << endl;
+                    //Report BST info
+                    avlFile << REPORT_TO_FILE(opNum, (int)info[SIZE], (int)info[HEIGHT], info[AVG_NODE_DEPTH], timeElapsed, FILE_REMOVE) << endl;
                     }
-                
+
+                //Report operation 
+                operationsFile << REPORT_REMOVE(opNum, key) << endl;
+            
                 break;
                 }
             case SEARCH: 
                 {
-                //Get the key to search for 
-                int key = rand() % MAX_KEY;
+                //Get a key to search for 
+                key = distribution(generate);
 
                 bool reportResult; 
 

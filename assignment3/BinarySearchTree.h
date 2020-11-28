@@ -256,31 +256,28 @@ class BinarySearchTree
         { 
         int treeHeight = 0;
 
-        if(t != nullptr)
+        //If this is not a leaf
+        if(t->left != nullptr || t->right != nullptr)
             {
-            //If this is not a leaf
-            if(t->left != nullptr || t->right != nullptr)
+            //If both branches exist
+            if(t->left != nullptr && t->right != nullptr)
                 {
-                //If both branches exist
-                if(t->left != nullptr && t->right != nullptr)
-                    {
-                    int leftHeight = computeHeight(t->left);
-                    int rightHeight = computeHeight(t->right);
-                    treeHeight = 1 + (leftHeight > rightHeight) ? leftHeight : rightHeight;
-                    }
-                else if(t->left != nullptr)         //If only the left branch exists
-                    {
-                    treeHeight = 1 + computeHeight(t->left);
-                    }
-                else if(t->right != nullptr)        //If only the left branch exists
-                    {
-                    treeHeight = 1 + computeHeight(t->right);
-                    }
+                int leftHeight = computeHeight(t->left);
+                int rightHeight = computeHeight(t->right);
+                treeHeight = 1 + ((leftHeight > rightHeight) ? leftHeight : rightHeight);
                 }
-            else 
+            else if(t->left != nullptr)         //If only the left branch exists
                 {
-                treeHeight = 0;             //Height of leaf is 0
+                treeHeight = 1 + computeHeight(t->left);
                 }
+            else if(t->right != nullptr)        //If only the left branch exists
+                {
+                treeHeight = 1 + computeHeight(t->right);
+                }
+            }
+        else 
+            {
+            treeHeight = 0;             //Height of leaf is 0
             }
             
         return treeHeight;
