@@ -24,7 +24,7 @@ const int FAILURE =                 1;
 
 const int NUM_KEYS =                10000;              //10 Thousand Keys
 const int KEY_GAP =                 8647;               //Randomish key gap to get good spread of keys
-const int MAX_KEY =                 100000000;          //100 million
+const int MAX_KEY =                 1000000;            //1 million
 
 const int SIZE =                    0; 
 const int HEIGHT =                  1;
