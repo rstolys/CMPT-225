@@ -1,14 +1,14 @@
 /*-----------------------------------------------------------------------------
- * BSTtest.cpp -- Test program provided by assignment 2
+ * main.cpp -- Test program for comparison between BST and AVL.
  *
- * 30 Oct 2020	Ryan Stolys
+ * 28 Nov 2020	Ryan Stolys
  *
  -----------------------------------------------------------------------------*/
 
 /***INCLUDES******************************************************************/
 #include <iostream>
 #include <fstream>
-#include <stdlib.h> 
+#include <stdlib.h>
 #include <time.h>
 #include <math.h>
 #include <string>
@@ -22,15 +22,15 @@ using namespace std;
 const int SUCCESS =                 0;
 const int FAILURE =                 1;
 
-const int NUM_KEYS =                10000;              //10 Thousand Keys
+const int NUM_KEYS =                50000;              //10 Thousand Keys
 const int KEY_GAP =                 8647;               //Randomish key gap to get good spread of keys
-const int MAX_KEY =                 1000000;            //1 million
+const int MAX_KEY =                 1000000;          //100 million
 
 const int SIZE =                    0; 
 const int HEIGHT =                  1;
 const int AVG_NODE_DEPTH =          2;
 
-const int MAX_OPERATIONS =          1000;
+const int MAX_OPERATIONS =          10000;
 const int OPERATIONS_BN_TEST =      5; 
 const int TESTS_PER_REPORT =        MAX_OPERATIONS / OPERATIONS_BN_TEST;
 
@@ -117,9 +117,12 @@ int main(int argc, char **argv)
             sizeOfTrees++;
 
             //Report inital inserts to file
-            operationsFile << REPORT_INSERT(-1, key) << endl;
+            //operationsFile << REPORT_INSERT(-1, key) << endl;
             }
         }
+
+    //Report intial inserts to file 
+    operationsFile << "-1: inserted: " << sizeOfTrees << " keys to trees" << endl;
 
     //Initalize random number generator
     srand(1);                   //Using default seed to get the same sequence each time
