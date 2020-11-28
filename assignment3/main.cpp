@@ -22,9 +22,9 @@ using namespace std;
 const int SUCCESS =                 0;
 const int FAILURE =                 1;
 
-const int NUM_KEYS =                50000;              //10 Thousand Keys
+const int NUM_KEYS =                500000;             //500 Thousand Keys
 const int KEY_GAP =                 8647;               //Randomish key gap to get good spread of keys
-const int MAX_KEY =                 1000000;          //100 million
+const int MAX_KEY =                 1000000;            //10 million
 
 const int SIZE =                    0; 
 const int HEIGHT =                  1;
@@ -122,7 +122,7 @@ int main(int argc, char **argv)
         }
 
     //Report intial inserts to file 
-    operationsFile << "-1: inserted: " << sizeOfTrees << " keys to trees" << endl;
+    operationsFile << "-1: inserted: " << sizeOfTrees << " keys into trees" << endl;
 
     //Initalize random number generator
     srand(1);                   //Using default seed to get the same sequence each time
