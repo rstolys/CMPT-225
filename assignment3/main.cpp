@@ -22,7 +22,7 @@ using namespace std;
 const int SUCCESS =                 0;
 const int FAILURE =                 1;
 
-const int NUM_KEYS =                500000;             //500 Thousand Keys
+const int NUM_KEYS =                100000;             //100 Thousand Keys
 const int KEY_GAP =                 8647;               //Randomish key gap to get good spread of keys
 const int MAX_KEY =                 1000000;            //10 million
 
