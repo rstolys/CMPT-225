@@ -23,9 +23,9 @@ using namespace std;
 const int SUCCESS =                 0;
 const int FAILURE =                 1;
 
-const int NUM_KEYS =                100000;             //100 Thousand Keys
+const int NUM_KEYS =                1000000;             //100 Thousand Keys
 const int KEY_GAP =                 8647;               //Randomish key gap to get good spread of keys
-const int MAX_KEY =                 1000000;            //1 million
+const int MAX_KEY =                 10000000;            //1 million
 
 const int SIZE =                    0; 
 const int HEIGHT =                  1;
